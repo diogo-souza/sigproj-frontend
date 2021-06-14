@@ -14,7 +14,8 @@
   "extends": [
     "plugin:react/recommended",
     "airbnb",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -27,7 +28,8 @@
   "plugins": [
     "react",
     "react-hooks",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier"
   ],
   "rules": {
     "react-hooks/rules-of-hooks": "error",
@@ -38,6 +40,7 @@
     "camelcase": 0,
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
+    "prettier/prettier": "error",
     "react/jsx-filename-extension": [
       1,
       {
