@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "settings": {
     "import/resolver": {
@@ -35,6 +36,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
+    "import/prefer-default-export": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "no-console": "off",
     "camelcase": 0,
