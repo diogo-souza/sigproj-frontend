@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
+
 import OpenSansLight from '../fonts/OpenSans-Light.ttf';
 import OpenSansRegular from '../fonts/OpenSans-Regular.ttf';
 import OpenSansSemiBold from '../fonts/OpenSans-SemiBold.ttf';
@@ -39,37 +40,39 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  @media (max-width: 1080px) {
+  ${({ theme }) => css`
     html {
-      font-size: 93.75%;
+      font-size: 62.5%;
     }
-  }
 
-  @media (max-width: 720px) {
-    html {
-      font-size: 87.5%;
+    body {
+      background: ${theme.colors.mainBg};
+      color: ${theme.colors.title};
+      -webkit-font-smoothing: antialiased;
+      -mox-osx-font-smoothing: grayscale;
     }
-  }
 
-  body{
-    background: #FFFFFF;
-    color: #312E38;
-    -webkit-font-smoothing: antialiased;
-  }
+    body,
+    input,
+    textarea,
+    select,
+    button {
+      font-family: ${theme.font.family};
+      font-size: ${theme.font.sizes.medium};
+    }
 
-  body,
-  input,
-  textarea,
-  select,
-  button {
-    font: 400 1rem 'Open-Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong {
+      font-weight: ${theme.font.bold};
+    }
 
-  h1, h2, h3, h4, h5, h6, strong{
-    font-weight: bold;
-  }
-
-  button{
-    cursor: pointer;
-  }
+    button {
+      cursor: pointer;
+    }
+  `}
 `;
