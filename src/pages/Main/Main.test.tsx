@@ -1,10 +1,11 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { Main } from '.';
+import { screen } from '@testing-library/react';
+import { renderWithTheme } from 'utils/tests/helpers';
+import Main from '.';
 
 describe('<Main />', () => {
   it('should render the heading', () => {
-    render(<Main />);
+    renderWithTheme(<Main />);
     expect(screen.getByRole('heading', { name: /Main/i })).toBeInTheDocument();
   });
 });
