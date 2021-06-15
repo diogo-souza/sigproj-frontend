@@ -31,6 +31,13 @@ export default {
     text: '#595959',
     highlight: '#007bff',
   },
+  layers: {
+    base: 10,
+    menu: 20,
+    overlay: 30,
+    modal: 40,
+    alwaysOnTop: 50,
+  },
   spacings: {
     xxsmall: '0.8rem',
     xsmall: '1.6rem',
