@@ -25,10 +25,6 @@ const ContainerModifiers = {
     width: 100%;
   `,
   withIcon: (theme: DefaultTheme) => css`
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     svg {
       width: 1.5rem;
     }
@@ -40,6 +36,10 @@ const ContainerModifiers = {
 
 export const Container = styled.button<ContainerProps>`
   ${({ theme, size, color, fullWidth, hasIcon }) => css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
     background-color: ${theme.colors[color!]};
     color: ${theme.colors.white};
     border: 0;
