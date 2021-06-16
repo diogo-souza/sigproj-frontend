@@ -38,6 +38,13 @@ export default createGlobalStyle`
     padding:0;
     box-sizing: border-box;
     outline: 0;
+    -webkit-font-smoothing: antialiased;
+    -mox-osx-font-smoothing: grayscale;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
   }
 
   ${({ theme }) => css`
@@ -46,10 +53,8 @@ export default createGlobalStyle`
     }
 
     body {
-      background: ${theme.colors.mainBg};
+      background-color: ${theme.colors.mainBg};
       color: ${theme.colors.title};
-      -webkit-font-smoothing: antialiased;
-      -mox-osx-font-smoothing: grayscale;
     }
 
     body,
