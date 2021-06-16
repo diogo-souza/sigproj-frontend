@@ -32,9 +32,14 @@ export const Column = styled.div`
 
       > svg {
         width: ${theme.font.sizes.xlarge};
-        margin-right: ${theme.spacings.xsmall};
+        margin-right: ${theme.spacings.xxsmall};
       }
     }
+    a {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
     a:hover {
       text-decoration: underline;
     }
@@ -46,6 +51,7 @@ export const Copyright = styled.div`
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.xsmall};
     margin-top: ${theme.spacings.medium};
+    margin-bottom: $;
     text-align: center;
   `}
 `;

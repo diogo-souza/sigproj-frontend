@@ -4,6 +4,8 @@ import React from 'react';
 import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import * as S from './styles';
 
+const currentYear = new Date().getFullYear();
+
 const Footer: React.FC = () => (
   <S.Container>
     <S.Content>
@@ -56,8 +58,8 @@ const Footer: React.FC = () => (
     </S.Content>
 
     <S.Copyright>
-      © 2021 STI Labs - Superintendência de Tecnologia da Informação - STI.
-      Todos os direitos reservados.
+      © {currentYear} STI Labs - Superintendência de Tecnologia da Informação -
+      STI. Todos os direitos reservados.
     </S.Copyright>
   </S.Container>
 );
