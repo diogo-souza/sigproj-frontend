@@ -9,7 +9,7 @@ const currentYear = new Date().getFullYear();
 const Footer: React.FC = () => (
   <S.Container>
     <S.Content>
-      <S.Column aria-labelledby="footer-contact">
+      <S.Column aria-label="contato">
         <Heading color="white" size="small" lineBottom lineColor="primary">
           Proexc
         </Heading>
@@ -31,7 +31,7 @@ const Footer: React.FC = () => (
         </a>
       </S.Column>
 
-      <S.Column aria-labelledby="footer-contact">
+      <S.Column aria-label="contato">
         <Heading color="white" size="small" lineBottom lineColor="primary">
           STI
         </Heading>
