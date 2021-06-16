@@ -91,7 +91,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     background: ${theme.colors.white};
     z-index: ${theme.layers.menu};
 
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -102,7 +102,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
 
     transition: opacity 0.3s ease-in-out;
     opacity: ${isOpen ? 1 : 0};
-
+    overflow: hidden;
     > svg {
       position: absolute;
       top: 0;
