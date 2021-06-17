@@ -19,15 +19,15 @@ const ContainerModifiers = {
   large: (theme: DefaultTheme) => css`
     height: 5rem;
     font-size: ${theme.font.sizes.medium};
-    padding: ${theme.spacings.xxsmall} ${theme.spacings.xlarge};
+    padding: ${theme.spacings.xxsmall} ${theme.spacings.large};
   `,
-  fullWidth: () => css`
+  fullWidth: (theme: DefaultTheme) => css`
     width: 100%;
+    span + svg {
+      margin-left: ${theme.spacings.xxsmall};
+    }
   `,
   withIcon: (theme: DefaultTheme) => css`
-    svg {
-      width: 1.5rem;
-    }
     span + svg {
       margin-left: ${theme.spacings.xxsmall};
     }
@@ -45,12 +45,12 @@ export const Container = styled.button<ContainerProps>`
     border: 0;
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall};
-    ${!!size && ContainerModifiers[size](theme)};
-    ${!!fullWidth && ContainerModifiers.fullWidth()};
     ${hasIcon && ContainerModifiers.withIcon(theme)}
+    ${!!size && ContainerModifiers[size](theme)};
+    ${!!fullWidth && ContainerModifiers.fullWidth(theme)};
     transition: background-color 0.2s;
     :hover {
-      background-color: ${darken(0.1, theme.colors.primary)};
+      background-color: ${darken(0.1, theme.colors[color!])};
     }
   `}
 `;

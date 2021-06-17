@@ -23,7 +23,7 @@ describe('<Button />', () => {
     renderWithTheme(<Button size="large">Test</Button>);
     expect(screen.getByRole('button', { name: /Test/i })).toHaveStyle({
       height: '5rem',
-      padding: '0.8rem 4.8rem',
+      padding: '0.8rem 4.0rem',
       'font-size': '1.6rem',
     });
   });
