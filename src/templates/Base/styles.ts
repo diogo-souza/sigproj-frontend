@@ -23,6 +23,7 @@ export const SectionHeader = styled.main`
 export const SectionFooter = styled.main`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.large};
+    border-top: 3px solid ${theme.colors.primary};
     padding-bottom: ${theme.spacings.xsmall};
     padding-top: ${theme.spacings.xxlarge};
     background-color: ${theme.colors.minorBg};
