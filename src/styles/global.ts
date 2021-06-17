@@ -8,26 +8,31 @@ import OpenSansExtraBold from '../fonts/OpenSans-ExtraBold.ttf';
 
 export default createGlobalStyle`
   @font-face {
+    font-display: swap;
     font-family: "Open-Sans";
     font-weight: 300;
     src: local("Open-Sans"), url(${OpenSansLight}) format("truetype");
   }
   @font-face {
+    font-display: swap;
     font-family: "Open-Sans";
     font-weight: 400;
     src: local("Open-Sans"), url(${OpenSansRegular}) format("truetype");
   }
   @font-face {
+    font-display: swap;
     font-family: "Open-Sans";
     font-weight: 600;
     src: local("Open-Sans"), url(${OpenSansSemiBold}) format("truetype");
   }
   @font-face {
+    font-display: swap;
     font-family: "Open-Sans";
     font-weight: bold;
     src: local("Open-Sans"), url(${OpenSansBold}) format("truetype");
   }
   @font-face {
+    font-display: swap;
     font-family: "Open-Sans";
     font-weight: 800;
     src: local("Open-Sans"), url(${OpenSansExtraBold}) format("truetype");
