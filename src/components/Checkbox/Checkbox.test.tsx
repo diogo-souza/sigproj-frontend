@@ -1,0 +1,127 @@
+import { screen, waitFor } from '@testing-library/react';
+import { renderWithTheme } from 'utils/tests/helpers';
+import theme from 'styles/themes/ufpeTheme';
+
+import userEvent from '@testing-library/user-event';
+import Checkbox from '.';
+
+describe('<Checkbox />', () => {
+  it('should render with label', () => {
+    renderWithTheme(<Checkbox label="checkbox label" labelFor="check" />);
+    expect(screen.getByRole('checkbox')).toBeInTheDocument();
+    expect(screen.getByLabelText(/checkbox label/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/checkbox label/i).closest('label'),
+    ).toHaveAttribute('for', 'check');
+  });
+
+  it('should render with black label', () => {
+    renderWithTheme(
+      <Checkbox label="checkbox label" labelFor="check" labelColor="title" />,
+    );
+    expect(screen.getByText(/checkbox label/i)).toHaveStyle({
+      color: theme.colors.title,
+    });
+  });
+
+  it('should render with white label', () => {
+    renderWithTheme(
+      <Checkbox label="checkbox label" labelFor="check" labelColor="white" />,
+    );
+    expect(screen.getByText(/checkbox label/i)).toHaveStyle({
+      color: theme.colors.white,
+    });
+  });
+
+  it('should render with primary fillColor', () => {
+    renderWithTheme(
+      <Checkbox
+        label="checkbox label"
+        labelFor="check"
+        labelColor="white"
+        fillColor="primary"
+        isChecked
+      />,
+    );
+    expect(screen.getByRole('checkbox')).toHaveStyle({
+      background: theme.colors.primary,
+    });
+  });
+
+  it('should render with secondary fillColor', () => {
+    renderWithTheme(
+      <Checkbox
+        label="checkbox label"
+        labelFor="check"
+        labelColor="white"
+        fillColor="secondary"
+        isChecked
+      />,
+    );
+    expect(screen.getByRole('checkbox')).toHaveStyle({
+      background: theme.colors.secondary,
+    });
+  });
+
+  it('should render with tertiary fillColor', () => {
+    renderWithTheme(
+      <Checkbox
+        label="checkbox label"
+        labelFor="check"
+        labelColor="white"
+        fillColor="tertiary"
+        isChecked
+      />,
+    );
+    expect(screen.getByRole('checkbox')).toHaveStyle({
+      background: theme.colors.tertiary,
+    });
+  });
+
+  it('should dispatch onCheck when status change', async () => {
+    const onCheck = jest.fn();
+    renderWithTheme(
+      <Checkbox label="checkbox label" labelFor="check" onCheck={onCheck} />,
+    );
+
+    expect(onCheck).not.toHaveBeenCalled();
+
+    userEvent.click(screen.getByRole('checkbox'));
+    await waitFor(() => {
+      expect(onCheck).toHaveBeenCalledTimes(1);
+    });
+
+    expect(onCheck).toHaveBeenCalledWith(true);
+  });
+
+  it('should call onCheck with false if the Checkbox is already checked', async () => {
+    const onCheck = jest.fn();
+    renderWithTheme(
+      <Checkbox
+        label="checkbox label"
+        labelFor="check"
+        onCheck={onCheck}
+        isChecked
+      />,
+    );
+
+    expect(onCheck).not.toHaveBeenCalled();
+
+    userEvent.click(screen.getByRole('checkbox'));
+    await waitFor(() => {
+      expect(onCheck).toHaveBeenCalledTimes(1);
+    });
+
+    expect(onCheck).toHaveBeenCalledWith(false);
+  });
+
+  it('should be accessible with tab', async () => {
+    renderWithTheme(<Checkbox label="checkbox label" labelFor="check" />);
+
+    expect(document.body).toHaveFocus();
+
+    userEvent.tab();
+
+    expect(screen.getByLabelText(/checkbox label/i)).toHaveFocus();
+  });
+});
