@@ -58,7 +58,11 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.ts(x)?"
+      "src/**/*.ts(x)?",
+      "!src/*.ts(x)?",
+      "!src/pages/**/*.tsx",
+      "!src/styles/**/*.ts",
+      "!src/types/**/*.d.ts"
     ]
   },
   "browserslist": {
