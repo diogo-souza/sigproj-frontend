@@ -13,7 +13,7 @@ describe('<MediaMatch />', () => {
         <MediaMatch greaterThan="medium">
           <h1 data-testid="desktop">Desktop</h1>
         </MediaMatch>
-        <MediaMatch lessThan="medium">
+        <MediaMatch lessThan="lmedium">
           <h1 data-testid="mobile">Mobile</h1>
         </MediaMatch>
       </>,
@@ -30,7 +30,7 @@ describe('<MediaMatch />', () => {
 
   it('should show or hide based on the media passed', () => {
     expect(desktopHeading.parentElement).toHaveStyleRule('display', 'block', {
-      media: '(min-width: 768px)',
+      media: '(min-width: 769px)',
     });
 
     expect(mobileHeading.parentElement).toHaveStyleRule('display', 'block', {

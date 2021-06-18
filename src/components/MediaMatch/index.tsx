@@ -12,8 +12,8 @@ type customBreakpointsType = {
 const customBreakpoints = generateMedia({
   huge: '1440px',
   large: '1170px',
-  lmedium: '767px',
-  medium: '768px',
+  lmedium: '768px',
+  medium: '769px',
   small: '450px',
 });
 
