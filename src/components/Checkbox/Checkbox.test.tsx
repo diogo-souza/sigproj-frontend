@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
-import theme from 'styles/themes/ufpeTheme';
+import theme from 'styles/themes';
 
 import userEvent from '@testing-library/user-event';
 import Checkbox from '.';
@@ -17,19 +17,27 @@ describe('<Checkbox />', () => {
 
   it('should render with black label', () => {
     renderWithTheme(
-      <Checkbox label="checkbox label" labelFor="check" labelColor="title" />,
+      <Checkbox
+        label="checkbox label"
+        labelFor="check"
+        labelColor="titleBlack"
+      />,
     );
     expect(screen.getByText(/checkbox label/i)).toHaveStyle({
-      color: theme.colors.title,
+      color: theme.colors.titleBlack,
     });
   });
 
   it('should render with white label', () => {
     renderWithTheme(
-      <Checkbox label="checkbox label" labelFor="check" labelColor="white" />,
+      <Checkbox
+        label="checkbox label"
+        labelFor="check"
+        labelColor="titleWhite"
+      />,
     );
     expect(screen.getByText(/checkbox label/i)).toHaveStyle({
-      color: theme.colors.white,
+      color: theme.colors.titleWhite,
     });
   });
 
@@ -38,7 +46,7 @@ describe('<Checkbox />', () => {
       <Checkbox
         label="checkbox label"
         labelFor="check"
-        labelColor="white"
+        labelColor="titleWhite"
         fillColor="primary"
         isChecked
       />,
@@ -53,7 +61,7 @@ describe('<Checkbox />', () => {
       <Checkbox
         label="checkbox label"
         labelFor="check"
-        labelColor="white"
+        labelColor="titleWhite"
         fillColor="secondary"
         isChecked
       />,
@@ -68,7 +76,7 @@ describe('<Checkbox />', () => {
       <Checkbox
         label="checkbox label"
         labelFor="check"
-        labelColor="white"
+        labelColor="titleWhite"
         fillColor="tertiary"
         isChecked
       />,

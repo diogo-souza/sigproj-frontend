@@ -27,7 +27,7 @@ export const MenuNav = styled.div``;
 export const MenuLink = styled.a`
   ${({ theme }) => css`
     position: relative;
-    color: ${theme.colors.white};
+    color: ${theme.colors.titleWhite};
     font-size: ${theme.font.sizes.medium};
     margin: 0.3rem ${theme.spacings.small} 0;
     text-decoration: none;
@@ -122,7 +122,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     }
 
     ${MenuLink} {
-      color: ${theme.colors.title};
+      color: ${theme.colors.titleBlack};
       font-weight: ${theme.font.bold};
       font-size: ${theme.font.sizes.xlarge};
       margin-bottom: ${theme.spacings.small};

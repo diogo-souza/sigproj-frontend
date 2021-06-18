@@ -23,7 +23,7 @@ export const Input = styled.input<Pick<CheckboxProps, 'fillColor'>>`
     appearance: none;
     width: 1.8rem;
     height: 1.8rem;
-    border: 0.2rem solid #2e2f42;
+    border: 0.2rem solid ${theme.colors.darkGray};
     border-radius: 0.2rem;
     transition: background border 0.1s ease-in-out;
     position: relative;
@@ -45,7 +45,7 @@ export const Input = styled.input<Pick<CheckboxProps, 'fillColor'>>`
       box-shadow: 0 0 0.5rem ${theme.colors[fillColor!]};
     }
     &:hover {
-      border-color: #8f8f8f;
+      border-color: ${theme.colors.gray};
       transition: 0.1s ease-in-out;
     }
     &:checked {

@@ -41,7 +41,7 @@ export const Container = styled.button<ContainerProps>`
     justify-content: center;
     text-decoration: none;
     background-color: ${theme.colors[color!]};
-    color: ${theme.colors.white};
+    color: ${theme.colors.titleWhite};
     border: 0;
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall};

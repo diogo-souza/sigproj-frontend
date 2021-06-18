@@ -25,7 +25,7 @@ export const Column = styled.div`
     span {
       display: flex;
       align-items: center;
-      color: ${theme.colors.white};
+      color: ${theme.colors.titleWhite};
       text-decoration: none;
       margin-bottom: ${theme.spacings.xxsmall};
       font-size: ${theme.font.sizes.small};
@@ -48,7 +48,7 @@ export const Column = styled.div`
 
 export const Copyright = styled.div`
   ${({ theme }) => css`
-    color: ${theme.colors.white};
+    color: ${theme.colors.titleWhite};
     font-size: ${theme.font.sizes.xsmall};
     margin-top: ${theme.spacings.medium};
     margin-bottom: $;

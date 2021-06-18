@@ -6,7 +6,7 @@ export type CheckboxProps = {
   isChecked?: boolean;
   label: string;
   labelFor: string;
-  labelColor?: 'title' | 'white';
+  labelColor?: 'titleBlack' | 'titleWhite';
   fillColor?: 'primary' | 'secondary' | 'tertiary';
   value?: string | ReadonlyArray<string> | number;
 } & InputHTMLAttributes<HTMLInputElement>;
@@ -16,7 +16,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   isChecked = false,
   label,
   labelFor,
-  labelColor = 'title',
+  labelColor = 'titleBlack',
   value,
   fillColor = 'secondary',
   ...props

@@ -28,12 +28,25 @@ export default {
     primary: '#B51222',
     secondary: '#159CAE',
     tertiary: '#157BAE',
+
+    success: '#48BB78',
+    danger: '#dc3545',
+    warning: '#ffc107',
+    focus: '#0d6efd',
+
     mainBg: '#FAFAFA',
     minorBg: '#242020',
+
+    black: '#171923',
+    darkGray: '#212227',
+    gray: '#939393',
+    lightGray: '#E1E1E1',
     white: '#FFFFFF',
-    title: '#2b2b2b',
-    text: '#595959',
-    highlight: '#007bff',
+
+    titleBlack: '#171923',
+    titleWhite: '#FFFFFF',
+    bodyBlack: '#939393',
+    bodyWhite: '#FFFFFF',
   },
   layers: {
     base: 10,

@@ -1,4 +1,4 @@
-import theme from 'styles/themes/ufpeTheme';
+import theme from 'styles/themes';
 
 type Theme = typeof theme;
 

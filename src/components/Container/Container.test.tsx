@@ -1,4 +1,4 @@
-import ufpeTheme from 'styles/themes/ufpeTheme';
+import theme from 'styles/themes';
 import { renderWithTheme } from 'utils/tests/helpers';
 import { Container } from '.';
 
@@ -11,7 +11,7 @@ describe('<Container />', () => {
     );
     expect(container.firstChild).toHaveStyleRule(
       'max-width',
-      ufpeTheme.grid.container,
+      theme.grid.container,
     );
     expect(container.firstChild).toMatchInlineSnapshot(`
       .c0 {

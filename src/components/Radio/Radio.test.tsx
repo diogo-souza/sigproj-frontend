@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
-import theme from 'styles/themes/ufpeTheme';
+import theme from 'styles/themes';
 
 import userEvent from '@testing-library/user-event';
 import Radio from '.';
@@ -13,7 +13,7 @@ describe('<Radio />', () => {
         value="anyValue"
         label="Radio"
         labelFor="check"
-        labelColor="white"
+        labelColor="titleWhite"
       />,
     );
 
@@ -29,13 +29,13 @@ describe('<Radio />', () => {
         value="anyValue"
         label="Radio"
         labelFor="Teste"
-        labelColor="title"
+        labelColor="titleBlack"
       />,
     );
 
     const label = screen.getByText('Radio');
     expect(label).toBeInTheDocument();
-    expect(label).toHaveStyle({ color: theme.colors.title });
+    expect(label).toHaveStyle({ color: theme.colors.titleBlack });
   });
 
   it('should dispatch onCheck when label status changes', async () => {

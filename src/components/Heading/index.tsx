@@ -4,7 +4,7 @@ export type LineColors = 'primary' | 'secondary';
 
 export type HeadingProps = {
   children: React.ReactNode;
-  color?: 'white' | 'title';
+  color?: 'titleWhite' | 'titleBlack';
   lineLeft?: boolean;
   lineBottom?: boolean;
   lineColor?: LineColors;
@@ -13,7 +13,7 @@ export type HeadingProps = {
 
 const Heading: React.FC<HeadingProps> = ({
   children,
-  color = 'white',
+  color = 'titleWhite',
   lineLeft = false,
   lineBottom = false,
   lineColor = 'primary',

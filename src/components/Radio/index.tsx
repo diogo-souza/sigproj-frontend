@@ -6,8 +6,15 @@ type RadioValue = string | ReadonlyArray<string> | number;
 export type RadioProps = {
   label: string;
   labelFor: string;
-  labelColor?: 'title' | 'white';
-  fillColor?: 'primary' | 'secondary' | 'tertiary';
+  labelColor?: 'titleBlack' | 'titleWhite';
+  fillColor?:
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'focus';
   name: string;
   value: RadioValue;
   onCheck?: (value?: RadioValue) => void;
@@ -17,7 +24,7 @@ const Radio: React.FC<RadioProps> = ({
   onCheck,
   label,
   labelFor,
-  labelColor = 'title',
+  labelColor = 'titleBlack',
   value,
   fillColor = 'secondary',
   ...props

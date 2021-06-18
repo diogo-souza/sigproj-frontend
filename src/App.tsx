@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'styles/global';
-import theme from 'styles/themes/ufpeTheme';
+import theme from 'styles/themes';
 import Home from 'pages/Home';
 
 function App() {

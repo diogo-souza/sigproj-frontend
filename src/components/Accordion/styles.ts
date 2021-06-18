@@ -13,7 +13,7 @@ export const Header = styled.button`
     justify-content: space-between;
     padding: ${theme.spacings.small};
 
-    color: ${theme.colors.title};
+    color: ${theme.colors.titleBlack};
     font-size: ${theme.font.sizes.large};
 
     border: none;
@@ -26,7 +26,7 @@ export const Header = styled.button`
 
 export const Content = styled.div`
   ${({ theme }) => css`
-    color: ${theme.colors.title};
+    color: ${theme.colors.titleBlack};
     font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.semiBold};
     overflow: hidden;

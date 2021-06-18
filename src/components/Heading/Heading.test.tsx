@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
-
+import theme from 'styles/themes';
 import Heading from '.';
 
 describe('<Heading />', () => {
@@ -11,17 +11,17 @@ describe('<Heading />', () => {
     });
   });
 
-  it('should render a title(color) heading when color is passed', () => {
-    renderWithTheme(<Heading color="title">Test</Heading>);
+  it('should render a black heading when color is passed', () => {
+    renderWithTheme(<Heading color="titleBlack">Test</Heading>);
     expect(screen.getByRole('heading', { name: /Test/i })).toHaveStyle({
-      color: '#2b2b2b',
+      color: theme.colors.titleBlack,
     });
   });
 
   it('should render a heading with a line to the left side', () => {
     renderWithTheme(<Heading lineLeft>Test</Heading>);
     expect(screen.getByRole('heading', { name: /Test/i })).toHaveStyle({
-      'border-left': '0.7rem solid #B51222',
+      'border-left': `0.7rem solid ${theme.colors.primary}`,
     });
   });
 
@@ -29,7 +29,7 @@ describe('<Heading />', () => {
     renderWithTheme(<Heading lineBottom>Test</Heading>);
     expect(screen.getByRole('heading', { name: /Test/i })).toHaveStyleRule(
       'border-bottom',
-      '0.5rem solid #B51222',
+      `0.5rem solid ${theme.colors.primary}`,
       {
         modifier: '::after',
       },
@@ -67,10 +67,16 @@ describe('<Heading />', () => {
     );
 
     const heading = screen.getByRole('heading', { name: /Test/i });
-    expect(heading).toHaveStyle({ 'border-left': '0.7rem solid #B51222' });
-    expect(heading).toHaveStyleRule('border-bottom', '0.5rem solid #B51222', {
-      modifier: '::after',
+    expect(heading).toHaveStyle({
+      'border-left': `0.7rem solid ${theme.colors.primary}`,
     });
+    expect(heading).toHaveStyleRule(
+      'border-bottom',
+      `0.5rem solid ${theme.colors.primary}`,
+      {
+        modifier: '::after',
+      },
+    );
   });
 
   it('should render a Heading with a secondary line color', () => {
@@ -81,9 +87,15 @@ describe('<Heading />', () => {
     );
 
     const heading = screen.getByRole('heading', { name: /Test/i });
-    expect(heading).toHaveStyle({ 'border-left': '0.7rem solid #159CAE' });
-    expect(heading).toHaveStyleRule('border-bottom', '0.5rem solid #159CAE', {
-      modifier: '::after',
+    expect(heading).toHaveStyle({
+      'border-left': `0.7rem solid ${theme.colors.secondary}`,
     });
+    expect(heading).toHaveStyleRule(
+      'border-bottom',
+      `0.5rem solid ${theme.colors.secondary}`,
+      {
+        modifier: '::after',
+      },
+    );
   });
 });

@@ -25,7 +25,6 @@ const Menu: React.FC = () => {
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
           <S.MenuLink href="#">Inicio</S.MenuLink>
-          <S.MenuLink href="#">Sobre</S.MenuLink>
           <S.MenuLink href="#">Consulta</S.MenuLink>
           <S.MenuLink href="#">Fale Conosco</S.MenuLink>
           <Button icon={<UserIcon />}>Logar</Button>
@@ -36,7 +35,6 @@ const Menu: React.FC = () => {
         <CloseIcon aria-label="Fechar Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
           <S.MenuLink href="#">Inicio</S.MenuLink>
-          <S.MenuLink href="#">Sobre</S.MenuLink>
           <S.MenuLink href="#">Consulta</S.MenuLink>
           <S.MenuLink href="#">Fale Conosco</S.MenuLink>
         </S.MenuNav>

@@ -27,7 +27,12 @@ const Home: React.FC = () => (
             alt="Ilustração desenvolvida pelo Freepik de mulher registrando alguns papeis em um container"
           />
           <S.Content>
-            <Heading lineLeft lineColor="secondary" size="medium" color="title">
+            <Heading
+              lineLeft
+              lineColor="secondary"
+              size="medium"
+              color="titleBlack"
+            >
               Consulte Editais e Ações Registradas
             </Heading>
             <p>
@@ -58,7 +63,12 @@ const Home: React.FC = () => (
       <Container data-testid="Section">
         <S.Section>
           <S.Content>
-            <Heading lineLeft lineColor="secondary" size="medium" color="title">
+            <Heading
+              lineLeft
+              lineColor="secondary"
+              size="medium"
+              color="titleBlack"
+            >
               Cadastre suas Ações em um Edital
             </Heading>
             <p>
@@ -91,7 +101,12 @@ const Home: React.FC = () => (
             alt="Ilustração desenvolvida pelo Freepik de mulher registrando alguns papeis em um container"
           />
           <S.Content>
-            <Heading lineLeft lineColor="secondary" size="medium" color="title">
+            <Heading
+              lineLeft
+              lineColor="secondary"
+              size="medium"
+              color="titleBlack"
+            >
               Emita certificados de ações que participou
             </Heading>
             <p>
@@ -112,7 +127,12 @@ const Home: React.FC = () => (
 
       <Container data-testid="Section">
         <S.FaqSection>
-          <Heading lineLeft lineColor="secondary" size="medium" color="title">
+          <Heading
+            lineLeft
+            lineColor="secondary"
+            size="medium"
+            color="titleBlack"
+          >
             Perguntas Frequentes
           </Heading>
           {questionsAnswers.map(accordion => (

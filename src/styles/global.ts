@@ -59,7 +59,7 @@ export default createGlobalStyle`
 
     body {
       background-color: ${theme.colors.mainBg};
-      color: ${theme.colors.title};
+      color: ${theme.colors.titleBlack};
     }
 
     body,
