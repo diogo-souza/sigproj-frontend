@@ -1,7 +1,9 @@
 import styled, { css } from 'styled-components';
 import { CheckboxProps } from '.';
 
-export const Label = styled.label<Pick<CheckboxProps, 'labelColor'>>`
+type ContainerProps = Pick<CheckboxProps, 'labelColor' | 'fillColor'>;
+
+export const Label = styled.label<ContainerProps>`
   ${({ theme, labelColor }) => css`
     cursor: pointer;
     display: flex;
@@ -14,8 +16,8 @@ export const Label = styled.label<Pick<CheckboxProps, 'labelColor'>>`
   `}
 `;
 
-export const Input = styled.input<Pick<CheckboxProps, 'fillColor'>>`
-  ${({ theme, fillColor }) => css`
+export const Input = styled.input<ContainerProps>`
+  ${({ theme, fillColor, labelColor }) => css`
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -23,7 +25,7 @@ export const Input = styled.input<Pick<CheckboxProps, 'fillColor'>>`
     appearance: none;
     width: 1.8rem;
     height: 1.8rem;
-    border: 0.2rem solid ${theme.colors.darkGray};
+    border: 0.2rem solid ${theme.colors[labelColor!]};
     border-radius: 0.2rem;
     transition: background border 0.1s ease-in-out;
     position: relative;

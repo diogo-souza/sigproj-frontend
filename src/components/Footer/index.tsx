@@ -10,7 +10,7 @@ const Footer: React.FC = () => (
   <S.Container>
     <S.Content>
       <S.Column aria-label="contato">
-        <Heading color="titleBlack" size="small" lineBottom lineColor="primary">
+        <Heading color="titleWhite" size="small" lineBottom lineColor="primary">
           Proexc
         </Heading>
         <a href="mailto:contato@proexc.ufpe.br">
@@ -32,7 +32,7 @@ const Footer: React.FC = () => (
       </S.Column>
 
       <S.Column aria-label="contato">
-        <Heading color="titleBlack" size="small" lineBottom lineColor="primary">
+        <Heading color="titleWhite" size="small" lineBottom lineColor="primary">
           STI
         </Heading>
         <a href="mailto:contato@sti.ufpe.br">

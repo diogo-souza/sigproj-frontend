@@ -40,6 +40,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         checked={checked}
         value={value}
         fillColor={fillColor}
+        labelColor={labelColor}
         {...props}
       />
       <span>{label}</span>
