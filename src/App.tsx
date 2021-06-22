@@ -2,15 +2,16 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyles from 'styles/global';
 import theme from 'styles/themes';
-import Home from 'pages/Home';
+import Routes from 'routes';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <Home />
+const App: React.FC = () => (
+  <ThemeProvider theme={theme}>
+    <Router>
+      <Routes />
       <GlobalStyles />
-    </ThemeProvider>
-  );
-}
+    </Router>
+  </ThemeProvider>
+);
 
 export default App;

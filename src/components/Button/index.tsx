@@ -1,17 +1,12 @@
-import React, { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import * as S from './styles';
-
-type ButtonTypes =
-  | AnchorHTMLAttributes<HTMLAnchorElement>
-  | ButtonHTMLAttributes<HTMLButtonElement>;
 
 export type ButtonProps = {
   size?: 'small' | 'medium' | 'large';
   color?: 'primary' | 'secondary' | 'tertiary';
   fullWidth?: boolean;
   icon?: JSX.Element;
-  as?: React.ElementType;
-} & ButtonTypes;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const Button: React.FC<ButtonProps> = ({
   children,

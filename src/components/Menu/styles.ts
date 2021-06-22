@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.menu`
@@ -24,7 +25,7 @@ export const IconContainer = styled.main`
 
 export const MenuNav = styled.div``;
 
-export const MenuLink = styled.a`
+export const MenuLink = styled(Link)`
   ${({ theme }) => css`
     position: relative;
     color: ${theme.colors.titleWhite};
@@ -71,7 +72,7 @@ export const RegisterBox = styled.div`
   `}
 `;
 
-export const CreateAccount = styled.a`
+export const CreateAccount = styled(Link)`
   ${({ theme }) => css`
     text-decoration: none;
     color: ${theme.colors.primary};
