@@ -7,7 +7,7 @@ import Radio from '.';
 
 describe('<Radio />', () => {
   it('should render with label (white)', () => {
-    renderWithTheme(
+    const { container } = renderWithTheme(
       <Radio
         name="anyName"
         value="anyValue"
@@ -20,6 +20,7 @@ describe('<Radio />', () => {
     const label = screen.getByText('Radio');
     expect(label).toBeInTheDocument();
     expect(label).toHaveStyle({ color: theme.colors.white });
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should render with label (title)', () => {

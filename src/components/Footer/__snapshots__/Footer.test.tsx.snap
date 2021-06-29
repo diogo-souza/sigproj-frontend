@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> should render 2 column topics 1`] = `
+.c4 {
+  color: #FFFFFF;
+  position: relative;
+  margin-bottom: 3.2rem;
+  font-size: 1.6rem;
+}
+
+.c4::after {
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  content: '';
+  width: 5rem;
+  border-bottom: 0.5rem solid #B51222;
+}
+
+.c4::after {
+  width: 3rem;
+}
+
+.c5 {
+  color: white;
+}
+
+.c0 .c3 {
+  text-transform: uppercase;
+}
+
+.c1 {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: 3.2rem;
+}
+
+.c2 a,
+.c2 span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #FFFFFF;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.c2 a > svg,
+.c2 span > svg {
+  width: 2.0rem;
+  margin-right: 0.8rem;
+}
+
+.c2 a {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.c2 a:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c6 {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  margin-top: 3.2rem;
+  margin-bottom: $;
+  text-align: center;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+<footer
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <div
+      aria-label="contato"
+      class="c2"
+    >
+      <h2
+        class="c3 c4"
+        color="titleWhite"
+      >
+        Proexc
+      </h2>
+      <a
+        href="mailto:contato@proexc.ufpe.br"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+          />
+        </svg>
+        contato@proexc.ufpe.br
+      </a>
+      <a
+        href="tel:+55 81 99999-9999"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+          />
+        </svg>
+        +55 81 99999-9999
+      </a>
+      <a
+        href="https://goo.gl/maps/mehG6hKBZBHVX223A"
+        rel="noopenner, noreferrer"
+        target="_blank"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 384 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+          />
+        </svg>
+        CIn - Centro de Informática - UFPE
+      </a>
+    </div>
+    <div
+      aria-label="contato"
+      class="c2"
+    >
+      <h2
+        class="c3 c4"
+        color="titleWhite"
+      >
+        STI
+      </h2>
+      <a
+        href="mailto:contato@sti.ufpe.br"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"
+          />
+        </svg>
+         contato@sti.ufpe.br
+      </a>
+      <a
+        href="tel:+55 81 99999-9999"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"
+          />
+        </svg>
+        +55 81 99999-9999
+      </a>
+      <a
+        href="https://goo.gl/maps/mehG6hKBZBHVX223A"
+        rel="noopenner, noreferrer"
+        target="_blank"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 384 512"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+          />
+        </svg>
+        CIn - Centro de Informática - UFPE
+      </a>
+    </div>
+    <div
+      class="c2"
+    >
+      <main
+        class="c5"
+      >
+        <h1>
+          Logo
+        </h1>
+      </main>
+    </div>
+  </div>
+  <div
+    class="c6"
+  >
+    © 
+    2021
+     STI Labs - Superintendência de Tecnologia da Informação - STI. Todos os direitos reservados.
+  </div>
+</footer>
+`;

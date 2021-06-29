@@ -5,10 +5,11 @@ import Accordion from '.';
 
 describe('<Accordion />', () => {
   it('should render the Accordion', () => {
-    renderWithTheme(
+    const { container } = renderWithTheme(
       <Accordion question="Pergunta teste" answer="Resposta teste" />,
     );
     expect(screen.getByRole('main')).toBeInTheDocument();
+    expect(container.firstChild).toMatchSnapshot();
   });
   it('should handle the open/close Accordion', () => {
     renderWithTheme(

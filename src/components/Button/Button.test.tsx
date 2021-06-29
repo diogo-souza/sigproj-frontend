@@ -5,12 +5,14 @@ import Button from '.';
 
 describe('<Button />', () => {
   it('should render the medium size by default', () => {
-    renderWithTheme(<Button>Test</Button>);
+    const { container } = renderWithTheme(<Button>Test</Button>);
     expect(screen.getByRole('button', { name: /Test/i })).toHaveStyle({
       height: '4rem',
       padding: '0.8rem 3.2rem',
       'font-size': '1.4rem',
     });
+
+    expect(container.firstChild).toMatchSnapshot();
   });
   it('should render the small size', () => {
     renderWithTheme(<Button size="small">Test</Button>);
