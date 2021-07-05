@@ -12,9 +12,9 @@ export default [
     answer: `
     <p>Seguindo os próximos passos</p>
     <ul>
-      <li>Se cadastrando no sistema;
-      <li>Logando no sistema;
-      <li>Indo na área de criação de ação;
+      <li>Se cadastrar no sistema;
+      <li>Logar no sistema;
+      <li>Ir na área de criação de ação;
       <li>Prencher o formulário;
       <li>Pronto ação finalizada com sucesso.
     </ul>`,
