@@ -7,51 +7,39 @@ import {
 } from 'react-icons/fa';
 import * as S from './styles';
 
-export type ProfileMenuProps = {
-  activeLink?:
-    | '/perfil/eu'
-    | '/perfil/senha'
-    | '/perfil/endereco'
-    | '/perfil/ensino';
+const ProfileMenu: React.FC = () => {
+  return (
+    <S.Nav>
+      <S.NavLink to="/perfil/eu" title="Meu perfil" activeClassName="isActive">
+        <UserIcon size={24} />
+        <span>Meu perfil</span>
+      </S.NavLink>
+      <S.NavLink
+        to="/perfil/senha"
+        title="Minha senha"
+        activeClassName="isActive"
+      >
+        <LockIcon size={24} />
+        <span>Minha senha</span>
+      </S.NavLink>
+      <S.NavLink
+        to="/perfil/endereco"
+        title="Meu endereço"
+        activeClassName="isActive"
+      >
+        <AddressIcon size={24} />
+        <span>Meu endereço</span>
+      </S.NavLink>
+      <S.NavLink
+        to="/perfil/escolaridade"
+        title="Minha escolaridade"
+        activeClassName="isActive"
+      >
+        <GraduationIcon size={24} />
+        <span>Minha escolaridade</span>
+      </S.NavLink>
+    </S.Nav>
+  );
 };
-
-const ProfileMenu: React.FC<ProfileMenuProps> = ({
-  activeLink,
-}: ProfileMenuProps) => (
-  <S.Nav>
-    <S.Link
-      isActive={activeLink === '/perfil/eu'}
-      to="/perfil/eu"
-      title="Meu perfil"
-    >
-      <UserIcon size={24} />
-      <span>Meu perfil</span>
-    </S.Link>
-    <S.Link
-      isActive={activeLink === '/perfil/senha'}
-      to="/perfil/senha"
-      title="Minha senha"
-    >
-      <LockIcon size={24} />
-      <span>Minha senha</span>
-    </S.Link>
-    <S.Link
-      isActive={activeLink === '/perfil/endereco'}
-      to="/perfil/endereco"
-      title="Meu endereço"
-    >
-      <AddressIcon size={24} />
-      <span>Meu endereço</span>
-    </S.Link>
-    <S.Link
-      isActive={activeLink === '/perfil/ensino'}
-      to="/perfil/escolaridade"
-      title="Minha escolaridade"
-    >
-      <GraduationIcon size={24} />
-      <span>Minha escolaridade</span>
-    </S.Link>
-  </S.Nav>
-);
 
 export default ProfileMenu;

@@ -1,6 +1,6 @@
-import styled, { css, DefaultTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 import media from 'styled-media-query';
-import { Link as LinkRRD } from 'react-router-dom';
+import { NavLink as NavLinkRRD } from 'react-router-dom';
 
 export const Nav = styled.nav`
   ${({ theme }) => css`
@@ -16,23 +16,10 @@ export const Nav = styled.nav`
   `}
 `;
 
-const linkModifiers = {
-  default: (theme: DefaultTheme) => css`
+export const NavLink = styled(NavLinkRRD)`
+  ${({ theme, activeClassName }) => css`
     background: ${theme.colors.white};
     color: ${theme.colors.titleBlack};
-  `,
-  active: (theme: DefaultTheme) => css`
-    background: ${theme.colors.primary};
-    color: ${theme.colors.titleWhite};
-  `,
-};
-
-type LinkProps = {
-  isActive?: boolean;
-};
-
-export const Link = styled(LinkRRD)<LinkProps>`
-  ${({ theme, isActive }) => css`
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -52,8 +39,9 @@ export const Link = styled(LinkRRD)<LinkProps>`
         display: none;
       }
     `}
-
-    ${!isActive && linkModifiers.default(theme)}
-    ${isActive && linkModifiers.active(theme)}
+    &.${activeClassName} {
+      background: ${theme.colors.primary};
+      color: ${theme.colors.titleWhite};
+    }
   `}
 `;

@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import themes from 'styles/themes';
 import { renderWithTheme } from 'utils/tests/helpers';
 
@@ -24,10 +24,16 @@ describe('<ProfileMenu />', () => {
   });
 
   it(`should render the menu with an active link defined`, () => {
-    renderWithTheme(<ProfileMenu activeLink="/perfil/senha" />);
-    expect(screen.getByRole('link', { name: /minha senha/i })).toHaveStyle({
+    renderWithTheme(<ProfileMenu />);
+    screen.getByRole('navigation');
+    fireEvent.click(screen.getByRole('link', { name: /meu perfil/i }));
+    expect(screen.getByRole('link', { name: /meu perfil/i })).toHaveStyle({
       background: themes.colors.primary,
       color: themes.colors.titleWhite,
+    });
+    expect(screen.getByRole('link', { name: /minha senha/i })).toHaveStyle({
+      background: themes.colors.white,
+      color: themes.colors.titleBlack,
     });
   });
 });
