@@ -7,6 +7,11 @@ import FaleConosco from 'pages/FaleConosco';
 import Login from 'pages/Login';
 import Dashboard from 'pages/Dashboard';
 
+import MeuPerfil from 'pages/Perfil/MeuPerfil';
+import MinhaSenha from 'pages/Perfil/MinhaSenha';
+import Endereco from 'pages/Perfil/Endereco';
+import Escolaridade from 'pages/Perfil/Escolaridade';
+
 import Route from './Route';
 
 const Routes: React.FC = () => (
@@ -16,6 +21,10 @@ const Routes: React.FC = () => (
     <Route path="/fale-conosco" component={FaleConosco} />
     <Route path="/login" component={Login} />
     <Route path="/dashboard" component={Dashboard} isPrivate />
+    <Route path="/perfil/eu" component={MeuPerfil} />
+    <Route path="/perfil/senha" component={MinhaSenha} />
+    <Route path="/perfil/endereco" component={Endereco} />
+    <Route path="/perfil/escolaridade" component={Escolaridade} />
   </Switch>
 );
 
