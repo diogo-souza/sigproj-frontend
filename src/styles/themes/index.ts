@@ -31,8 +31,10 @@ export default {
 
     success: '#48BB78',
     danger: '#dc3545',
+    dangerShadow: 'rgba(220, 53, 69, 0.4)',
     warning: '#ffc107',
     focus: '#0d6efd',
+    focusShadow: 'rgba(75, 174, 227, 0.4)',
 
     mainBg: '#FAFAFA',
     minorBg: '#242020',
