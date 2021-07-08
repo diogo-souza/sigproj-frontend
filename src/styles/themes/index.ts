@@ -36,7 +36,7 @@ export default {
     focus: '#0d6efd',
     focusShadow: 'rgba(75, 174, 227, 0.4)',
 
-    mainBg: '#FAFAFA',
+    mainBg: '#F4F5F7',
     minorBg: '#242020',
 
     black: '#171923',

@@ -33,6 +33,7 @@ export const NavLink = styled(NavLinkRRD)`
       margin-left: ${theme.spacings.xsmall};
     }
     ${media.lessThan('medium')`
+      width: min(24px,100%);
       justify-content: center;
       flex: 1;
       > span {
