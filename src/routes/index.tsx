@@ -1,5 +1,4 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
 
 import Home from 'pages/Home';
 import Consulta from 'pages/Consulta';
@@ -13,6 +12,7 @@ import Endereco from 'pages/Perfil/Endereco';
 import Escolaridade from 'pages/Perfil/Escolaridade';
 
 import Route from './Route';
+import Switch from './Switch';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -21,10 +21,10 @@ const Routes: React.FC = () => (
     <Route path="/fale-conosco" component={FaleConosco} />
     <Route path="/login" component={Login} />
     <Route path="/dashboard" component={Dashboard} isPrivate />
-    <Route path="/perfil/eu" component={MeuPerfil} />
-    <Route path="/perfil/senha" component={MinhaSenha} />
-    <Route path="/perfil/endereco" component={Endereco} />
-    <Route path="/perfil/escolaridade" component={Escolaridade} />
+    <Route path="/perfil/eu" component={MeuPerfil} isPrivate />
+    <Route path="/perfil/senha" component={MinhaSenha} isPrivate />
+    <Route path="/perfil/endereco" component={Endereco} isPrivate />
+    <Route path="/perfil/escolaridade" component={Escolaridade} isPrivate />
   </Switch>
 );
 

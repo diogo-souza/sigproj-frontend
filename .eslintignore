@@ -5,3 +5,4 @@ build
 /src/reportWebVitals.ts
 /src/fonts
 /src/assets
+/src/**/*.css
