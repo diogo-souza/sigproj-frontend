@@ -121,11 +121,11 @@ exports[`<TextField /> should render with error 1`] = `
     <input
       class="c7"
       id="TextField"
-      value=""
     />
   </div>
   <p
     class="c8"
+    role="alert"
   >
     Error message
   </p>

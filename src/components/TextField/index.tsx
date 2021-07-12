@@ -17,7 +17,6 @@ const TextField: React.ForwardRefRenderFunction<
   {
     label,
     name,
-    initialValue = '',
     icon,
     iconPosition = 'left',
     disabled = false,
@@ -33,14 +32,13 @@ const TextField: React.ForwardRefRenderFunction<
         {!!icon && <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>}
         <S.Input
           ref={ref}
-          defaultValue={initialValue}
           iconPosition={iconPosition}
           disabled={disabled}
           {...(label ? { id: name } : {})}
           {...props}
         />
       </S.InputContainer>
-      {!!error && <S.Error>{error}</S.Error>}
+      {!!error && <S.Error role="alert">{error}</S.Error>}
     </S.Container>
   );
 };
