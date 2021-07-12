@@ -32,10 +32,16 @@ const ContainerModifiers = {
       margin-left: ${theme.spacings.xxsmall};
     }
   `,
+  disabled: () => css`
+    &:disabled {
+      cursor: not-allowed;
+      filter: saturate(30%);
+    }
+  `,
 };
 
 export const Container = styled.button<ContainerProps>`
-  ${({ theme, size, color, fullWidth, hasIcon }) => css`
+  ${({ theme, size, color, fullWidth, hasIcon, disabled }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -48,9 +54,13 @@ export const Container = styled.button<ContainerProps>`
     ${hasIcon && ContainerModifiers.withIcon(theme)}
     ${!!size && ContainerModifiers[size](theme)};
     ${!!fullWidth && ContainerModifiers.fullWidth(theme)};
-    transition: background-color 0.2s;
-    :hover {
-      background-color: ${darken(0.1, theme.colors[color!])};
-    }
+    ${disabled
+      ? ContainerModifiers.disabled()
+      : () => css`
+          transition: background-color 0.2s;
+          :hover {
+            background-color: ${darken(0.1, theme.colors[color!])};
+          }
+        `}
   `}
 `;
