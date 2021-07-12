@@ -17,14 +17,19 @@ import Switch from './Switch';
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={Home} />
-    <Route path="/consulta" component={Consulta} />
-    <Route path="/fale-conosco" component={FaleConosco} />
-    <Route path="/login" component={Login} />
-    <Route path="/dashboard" component={Dashboard} isPrivate />
-    <Route path="/perfil/eu" component={MeuPerfil} isPrivate />
-    <Route path="/perfil/senha" component={MinhaSenha} isPrivate />
-    <Route path="/perfil/endereco" component={Endereco} isPrivate />
-    <Route path="/perfil/escolaridade" component={Escolaridade} isPrivate />
+    <Route path="/consulta" exact component={Consulta} />
+    <Route path="/fale-conosco" exact component={FaleConosco} />
+    <Route path="/login" exact component={Login} />
+    <Route path="/dashboard" exact component={Dashboard} isPrivate />
+    <Route path="/perfil/eu" exact component={MeuPerfil} isPrivate />
+    <Route path="/perfil/senha" exact component={MinhaSenha} isPrivate />
+    <Route path="/perfil/endereco" exact component={Endereco} isPrivate />
+    <Route
+      path="/perfil/escolaridade"
+      exact
+      component={Escolaridade}
+      isPrivate
+    />
   </Switch>
 );
 
