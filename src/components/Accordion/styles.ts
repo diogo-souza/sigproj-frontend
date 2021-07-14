@@ -65,7 +65,7 @@ const AccordionModifiers = {
   `,
 };
 
-export const Container = styled.main<AccordionProps>`
+export const Container = styled.div<AccordionProps>`
   ${({ theme, isOpen }) => css`
     display: flex;
     flex-direction: column;

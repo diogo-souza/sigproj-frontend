@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { FaChevronRight as ArrowRightIcon } from 'react-icons/fa';
 import * as S from './styles';
 
@@ -12,8 +12,6 @@ const Accordion: React.FC<AccordionProps> = ({
   answer,
 }: AccordionProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const content = useRef<HTMLDivElement>(null);
 
   const handleToggleAccordion = () => {
     setIsOpen(!isOpen);
@@ -30,7 +28,6 @@ const Accordion: React.FC<AccordionProps> = ({
       </S.Header>
 
       <S.Content
-        ref={content}
         data-testid="accordion-content"
         aria-hidden={!isOpen}
         dangerouslySetInnerHTML={{ __html: answer }}
