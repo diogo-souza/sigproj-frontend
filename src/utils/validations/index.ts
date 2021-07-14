@@ -18,7 +18,7 @@ export type FieldErrors = {
   [key: string]: string;
 };
 
-export function getFieldErros(objError: Joi.ValidationResult) {
+export function getFieldErrors(objError: Joi.ValidationResult) {
   const errors: FieldErrors = {};
 
   if (objError.error) {

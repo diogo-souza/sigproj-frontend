@@ -1,64 +1,16 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
+import { User, UsersPermissionsLoginInput } from 'types/globalTypes';
 
 import api from '../services/api';
-
-type RolesTypes =
-  | 'ROLE_ROOT'
-  | 'ROLE_ADMIN'
-  | 'ROLE_PROPONENTE'
-  | 'ROLE_DISCENTE'
-  | 'ROLE_USUARIO';
-
-type ProviderTypes = 'local' | 'google';
-
-type Endereco = {
-  bairro: string;
-  cep: string;
-  cidade: string;
-  complemento: string;
-  estado: string;
-  logradouro: string;
-  numero_residencial: number;
-};
-
-type User = {
-  uuid: string;
-  cpf: string;
-  nome: string;
-  email: string;
-  sexo: string;
-  celular: string;
-  telefone: string;
-
-  data_nascimento: string;
-
-  universidade: string;
-  centro: string;
-  departamento: string;
-  categoria: string;
-  tipo_institucional: string;
-  carga_trabalho: string;
-  titulacao: string;
-
-  provider_id?: null;
-  provider: ProviderTypes;
-  endereco: Endereco;
-  role_usuario: RolesTypes;
-};
 
 type AuthState = {
   token: string;
   user: User;
 };
 
-type SignInCredentials = {
-  email: string;
-  password: string;
-};
-
 type AuthContextData = {
   user: User;
-  signIn(credential: SignInCredentials): Promise<void>;
+  signIn(credential: UsersPermissionsLoginInput): Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
