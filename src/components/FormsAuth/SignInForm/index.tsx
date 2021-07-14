@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from 'hooks/auth';
 
 import { FieldErrors } from 'utils/validations';
-import { signInValidate } from 'utils/validations/auth/auth';
+import { signInValidate } from 'utils/validations/auth';
 
 import Button from 'components/Button';
 import TextField from 'components/TextField';

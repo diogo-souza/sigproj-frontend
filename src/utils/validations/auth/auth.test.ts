@@ -1,4 +1,4 @@
-import { signInValidate } from './auth';
+import { signInValidate } from '.';
 
 describe('validations', () => {
   describe('signInValidate()', () => {
