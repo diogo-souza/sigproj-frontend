@@ -21,6 +21,7 @@ const TextField: React.FC<TextFieldProps> = ({
   error,
   onInputChange,
   style,
+  className,
   readOnly,
   ...props
 }: TextFieldProps) => {
@@ -39,6 +40,7 @@ const TextField: React.FC<TextFieldProps> = ({
       disabled={disabled}
       error={!!error}
       style={style}
+      className={className}
       readOnly={readOnly}
     >
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}

@@ -21,7 +21,7 @@ type Endereco = {
   complemento: string;
   estado: string;
   logradouro: string;
-  numero_residencial: number;
+  numero_residencial: string;
 };
 
 export type User = {
