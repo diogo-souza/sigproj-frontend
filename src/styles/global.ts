@@ -1,10 +1,10 @@
 import { createGlobalStyle, css } from 'styled-components';
 
-import OpenSansLight from '../fonts/OpenSans-Light.ttf';
-import OpenSansRegular from '../fonts/OpenSans-Regular.ttf';
-import OpenSansSemiBold from '../fonts/OpenSans-SemiBold.ttf';
-import OpenSansBold from '../fonts/OpenSans-Bold.ttf';
-import OpenSansExtraBold from '../fonts/OpenSans-ExtraBold.ttf';
+import OpenSansLight from '../assets/fonts/OpenSans-Light.ttf';
+import OpenSansRegular from '../assets/fonts/OpenSans-Regular.ttf';
+import OpenSansSemiBold from '../assets/fonts/OpenSans-SemiBold.ttf';
+import OpenSansBold from '../assets/fonts/OpenSans-Bold.ttf';
+import OpenSansExtraBold from '../assets/fonts/OpenSans-ExtraBold.ttf';
 
 export default createGlobalStyle`
   @font-face {
