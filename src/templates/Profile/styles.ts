@@ -7,7 +7,7 @@ export const Main = styled.main`
     ${media.greaterThan('medium')`
       display: grid;
       grid-template-columns: 32rem 1fr;
-      gap: calc(${theme.grid.gutter} * 2);
+      gap: ${theme.grid.gutter};
     `}
   `}
 `;

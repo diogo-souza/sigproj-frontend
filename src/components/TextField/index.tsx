@@ -20,6 +20,8 @@ const TextField: React.FC<TextFieldProps> = ({
   disabled = false,
   error,
   onInputChange,
+  style,
+  readOnly,
   ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue);
@@ -33,7 +35,12 @@ const TextField: React.FC<TextFieldProps> = ({
   };
 
   return (
-    <S.Container disabled={disabled} error={!!error}>
+    <S.Container
+      disabled={disabled}
+      error={!!error}
+      style={style}
+      readOnly={readOnly}
+    >
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
       <S.InputContainer>
         {!!icon && <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>}
@@ -43,6 +50,8 @@ const TextField: React.FC<TextFieldProps> = ({
           onChange={onChange}
           iconPosition={iconPosition}
           disabled={disabled}
+          icon={icon}
+          readOnly={readOnly}
           {...(label ? { id: name } : {})}
           {...props}
         />

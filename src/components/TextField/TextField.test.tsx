@@ -59,6 +59,20 @@ describe('<TextField />', () => {
     });
   });
 
+  it('should not changes its value when read only', async () => {
+    renderWithTheme(<TextField label="TextField" name="TextField" readOnly />);
+
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute('readOnly');
+
+    const text = 'This is my new text';
+    userEvent.type(input, text);
+
+    await waitFor(() => {
+      expect(input).not.toHaveValue(text);
+    });
+  });
+
   it('should render with Icon', () => {
     renderWithTheme(<TextField icon={<MailIcon data-testid="icon" />} />);
 

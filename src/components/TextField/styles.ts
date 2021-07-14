@@ -1,9 +1,9 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 import { TextFieldProps } from '.';
 
-type IconPositionProps = Pick<TextFieldProps, 'iconPosition'>;
+type IconPositionProps = Pick<TextFieldProps, 'iconPosition' | 'icon'>;
 
-type ContainerProps = Pick<TextFieldProps, 'disabled'> & {
+type ContainerProps = Pick<TextFieldProps, 'disabled' | 'readOnly'> & {
   error?: boolean;
 };
 
@@ -19,23 +19,27 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input<IconPositionProps>`
-  ${({ theme, iconPosition }) => css`
+  ${({ theme, iconPosition, icon }) => css`
     color: ${theme.colors.titleBlack};
     font-family: ${theme.font.family};
     font-size: ${theme.font.sizes.medium};
     font-weight: ${theme.font.semiBold};
     padding: ${theme.spacings.xxsmall} 0;
-    padding-${iconPosition}: ${theme.spacings.xsmall};
     background: transparent;
     border: 0;
     outline: none;
     width: 100%;
 
     &:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 ${theme.spacings.small}
-        ${theme.colors.lightGray} inset;
-      filter: none
+      -webkit-box-shadow: 0 0 0 ${theme.spacings.small} ${theme.colors.white}
+        inset;
+      filter: none;
     }
+
+    ${!!icon &&
+    css`
+        padding-${iconPosition}: ${theme.spacings.xsmall};
+    `}
   `}
 `;
 
@@ -43,17 +47,19 @@ export const InputContainer = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    background: ${theme.colors.lightGray};
+    background: ${theme.colors.white};
     border-radius: ${theme.border.radius};
-    padding: 0 ${theme.spacings.xsmall};
+    padding: 0 12px;
     border: 0.1rem solid;
-    border-color: ${theme.colors.lightGray};
+    border-color: ${theme.colors.gray};
     &:hover {
       border-color: ${theme.colors.gray};
     }
+    transition: border-color ${theme.transition.fast},
+      box-shadow ${theme.transition.fast};
     &:focus-within {
       border-color: ${theme.colors.focus};
-      box-shadow: 0 0 0 0.2rem ${theme.colors.focusShadow};
+      box-shadow: 0 0 0 0.3rem ${theme.colors.focusShadow};
     }
   `}
 `;
@@ -93,7 +99,7 @@ const containerModifiers = {
     ${InputContainer} {
       border-color: ${theme.colors.danger};
       &:focus-within {
-        box-shadow: 0 0 0 0.2rem ${theme.colors.dangerShadow};
+        box-shadow: 0 0 0 0.3rem ${theme.colors.dangerShadow};
       }
     }
     ${Icon},
@@ -101,11 +107,22 @@ const containerModifiers = {
       color: ${theme.colors.danger};
     }
   `,
+  readOnly: (theme: DefaultTheme) => css`
+    ${InputContainer} {
+      border-color: ${theme.colors.darkGray};
+      background-color: ${theme.colors.lightGray};
+      &:focus-within {
+        border-color: ${theme.colors.focus};
+        box-shadow: 0 0 0 0.3rem ${theme.colors.focusShadow};
+      }
+    }
+  `,
 };
 
 export const Container = styled.div<ContainerProps>`
-  ${({ theme, disabled, error }) => css`
+  ${({ theme, disabled, error, readOnly }) => css`
     ${disabled && containerModifiers.disabled(theme)}
     ${error && containerModifiers.error(theme)}
+    ${!!readOnly && containerModifiers.readOnly(theme)}
   `}
 `;

@@ -32,8 +32,8 @@ describe('<Form />', () => {
         -webkit-text-decoration: none;
         text-decoration: none;
         border-bottom: 0.1rem solid #159CAE;
-        -webkit-transition: color,border,0.1s ease-in-out;
-        transition: color,border,0.1s ease-in-out;
+        -webkit-transition: color,border,0.15s ease-in-out;
+        transition: color,border,0.15s ease-in-out;
       }
 
       .c1 a:hover {
