@@ -1,37 +1,46 @@
-import React, { forwardRef, InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes, useState } from 'react';
 import * as S from './styles';
 
 export type TextFieldProps = {
-  icon?: React.ReactNode;
-  iconPosition?: 'left' | 'right';
+  onInputChange?: (value: string) => void;
   label?: string;
   initialValue?: string;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
   disabled?: boolean;
   error?: string;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const TextField: React.ForwardRefRenderFunction<
-  HTMLInputElement,
-  TextFieldProps
-> = (
-  {
-    label,
-    name,
-    icon,
-    iconPosition = 'left',
-    disabled = false,
-    error,
-    ...props
-  }: TextFieldProps,
-  ref,
-) => {
+const TextField: React.FC<TextFieldProps> = ({
+  name,
+  label,
+  icon,
+  iconPosition = 'left',
+  initialValue = '',
+  disabled = false,
+  error,
+  onInputChange,
+  ...props
+}: TextFieldProps) => {
+  const [value, setValue] = useState(initialValue);
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = e.currentTarget.value;
+    setValue(newValue);
+
+    // eslint-disable-next-line no-unused-expressions
+    !!onInputChange && onInputChange(newValue);
+  };
+
   return (
     <S.Container disabled={disabled} error={!!error}>
       {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
       <S.InputContainer>
         {!!icon && <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>}
         <S.Input
-          ref={ref}
+          name={name}
+          value={value}
+          onChange={onChange}
           iconPosition={iconPosition}
           disabled={disabled}
           {...(label ? { id: name } : {})}
@@ -42,4 +51,4 @@ const TextField: React.ForwardRefRenderFunction<
     </S.Container>
   );
 };
-export default forwardRef(TextField);
+export default TextField;

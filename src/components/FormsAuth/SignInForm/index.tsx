@@ -1,91 +1,87 @@
 import React, { useState } from 'react';
-import TextField from 'components/TextField';
-import { FaEnvelope as MailIcon, FaLock as LockIcon } from 'react-icons/fa';
-import { BiErrorCircle as ErrorIcon } from 'react-icons/bi';
-import { FcGoogle as Googleicon } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
-import Button from 'components/Button';
 
-import { yupResolver } from '@hookform/resolvers/yup';
+import { FcGoogle as Googleicon } from 'react-icons/fc';
+import { BiErrorCircle as ErrorIcon } from 'react-icons/bi';
+import { FaEnvelope as MailIcon, FaLock as LockIcon } from 'react-icons/fa';
+
+import { Link } from 'react-router-dom';
+
 import { useAuth } from 'hooks/auth';
 
-import { useForm, SubmitHandler, Controller } from 'react-hook-form';
-import { signInFormSchema, SignInFormData } from 'utils/validations/auth';
+import { FieldErrors } from 'utils/validations';
+import { signInValidate } from 'utils/validations/auth/auth';
+
+import Button from 'components/Button';
+import TextField from 'components/TextField';
 import { FormContainer, FormError, FormLink, FormLoading } from '..';
 
 import * as S from './styles';
 
 const SignInForm: React.FC = () => {
+  const [values, setValues] = useState({ email: '', password: '' });
+  const [fieldError, setFieldError] = useState<FieldErrors>({});
+  const [formError, setFormError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { signIn } = useAuth();
-  const [hasError, setHasError] = useState(false);
-  const {
-    control,
-    handleSubmit,
-    reset,
-    formState: { errors, isSubmitting },
-  } = useForm<SignInFormData>({
-    resolver: yupResolver(signInFormSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-    },
-  });
 
-  const signInHandler: SubmitHandler<SignInFormData> = async ({
-    email,
-    password,
-  }: SignInFormData) => {
-    try {
-      setHasError(false);
-      await signIn({ email, password });
-    } catch (error) {
-      setHasError(true);
-      reset({ email, password: '' });
+  const handleInput = (field: string, value: string) => {
+    setValues(s => ({ ...s, [field]: value }));
+  };
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const errors = signInValidate(values);
+
+    if (Object.keys(errors).length) {
+      setFieldError(errors);
+      setLoading(false);
+      return;
     }
+
+    setFieldError({});
+    try {
+      await signIn({ ...values });
+    } catch {
+      setFormError(true);
+    }
+    setLoading(false);
   };
 
   return (
     <FormContainer>
-      {!!hasError && (
+      {formError && (
         <FormError>
           <ErrorIcon />
           Ocorreu um erro ao fazer login, cheque suas credenciais
         </FormError>
       )}
-      <form onSubmit={handleSubmit(signInHandler)} noValidate>
-        <Controller
-          control={control}
+      <form onSubmit={handleSubmit} noValidate>
+        <TextField
           name="email"
-          render={({ field }) => (
-            <TextField
-              label="E-mail"
-              type="email"
-              icon={<MailIcon />}
-              placeholder="Insira seu e-mail"
-              autoFocus
-              error={errors.email?.message}
-              {...field}
-            />
-          )}
+          type="email"
+          label="E-mail"
+          placeholder="Insira seu e-mail"
+          onInputChange={v => handleInput('email', v)}
+          autoFocus
+          error={fieldError?.email}
+          icon={<MailIcon />}
         />
-        <Controller
-          control={control}
+
+        <TextField
           name="password"
-          render={({ field }) => (
-            <TextField
-              label="Senha"
-              type="password"
-              placeholder="Insira sua Senha"
-              icon={<LockIcon />}
-              error={errors.password?.message}
-              {...field}
-            />
-          )}
+          label="Senha"
+          type="password"
+          placeholder="Insira sua Senha"
+          onInputChange={v => handleInput('password', v)}
+          error={fieldError?.password}
+          icon={<LockIcon />}
         />
 
         <S.ForgotPassword to="#">Esqueceu sua senha?</S.ForgotPassword>
-        <Button size="large" fullWidth disabled={isSubmitting}>
-          {isSubmitting ? <FormLoading /> : <span>Entrar</span>}
+        <Button size="large" fullWidth disabled={loading}>
+          {loading ? <FormLoading /> : <span>Entrar</span>}
         </Button>
         <FormLink>
           Não possui um conta? <Link to="/">Cadastre-se</Link>
@@ -93,7 +89,7 @@ const SignInForm: React.FC = () => {
       </form>
       <S.Separator>Ou continue com</S.Separator>
       <S.SocialLoginContainer>
-        <S.SocialLoginButton disabled={isSubmitting}>
+        <S.SocialLoginButton disabled={loading}>
           <Googleicon size={20} />
           <span>Login social com Google</span>
         </S.SocialLoginButton>
