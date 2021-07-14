@@ -40,4 +40,15 @@ describe('<Button />', () => {
     expect(screen.getByText(/Test/i)).toBeInTheDocument();
     expect(screen.getByTestId(/icon/i)).toBeInTheDocument();
   });
+  it('should render a disabled Button', () => {
+    renderWithTheme(<Button disabled>Test</Button>);
+
+    expect(screen.getByRole('button', { name: /test/i })).toHaveStyleRule(
+      'cursor',
+      'not-allowed',
+      {
+        modifier: ':disabled',
+      },
+    );
+  });
 });
