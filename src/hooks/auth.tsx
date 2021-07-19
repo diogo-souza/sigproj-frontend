@@ -1,5 +1,6 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
 import { User, UsersPermissionsLoginInput } from 'types/globalTypes';
+import { formatUser } from 'utils/formatters';
 
 import api from '../services/api';
 
@@ -33,7 +34,8 @@ const AuthProvider: React.FC = ({ children }) => {
     localStorage.setItem(process.env.REACT_APP_TOKEN!, token);
 
     const user_response = await api.get('/usuarios/perfil');
-    const user = user_response.data;
+    const user = formatUser(user_response.data);
+
     localStorage.setItem(process.env.REACT_APP_USER!, JSON.stringify(user));
 
     setData({ token, user });

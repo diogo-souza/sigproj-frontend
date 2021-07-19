@@ -17,6 +17,7 @@ const MyAddressForm: React.FC = () => {
           label="CEP"
           name="cep"
           type="text"
+          mask="cep"
           initialValue={user?.endereco.cep}
           placeholder="Insira seu CEP"
         />

@@ -1,6 +1,7 @@
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { FaEnvelope as MailIcon } from 'react-icons/fa';
+import { unmask } from 'utils/masks';
 
 import { renderWithTheme } from 'utils/tests/helpers';
 
@@ -92,6 +93,77 @@ describe('<TextField />', () => {
     expect(screen.getByText('Error message')).toBeInTheDocument();
 
     expect(container.firstChild).toMatchSnapshot();
+  });
+
+  it('should use cep mask', async () => {
+    renderWithTheme(
+      <TextField label="TextField" name="textfield" mask="cep" />,
+    );
+
+    const input = screen.getByRole('textbox');
+    const text = '00000000';
+    userEvent.type(input, text);
+
+    await waitFor(() => {
+      expect(input).toHaveValue('00000-000');
+    });
+  });
+
+  it('should use cpf mask', async () => {
+    renderWithTheme(
+      <TextField label="TextField" name="textfield" mask="cpf" />,
+    );
+
+    const input = screen.getByRole('textbox');
+    const text = '00000000000';
+    userEvent.type(input, text);
+
+    await waitFor(() => {
+      expect(input).toHaveValue('000.000.000-00');
+    });
+  });
+
+  it('should use telefone mask', async () => {
+    renderWithTheme(
+      <TextField label="TextField" name="textfield" mask="telephoneNumber" />,
+    );
+
+    const input = screen.getByRole('textbox');
+    const text = '00000000';
+    userEvent.type(input, text);
+
+    await waitFor(() => {
+      expect(input).toHaveValue('0000-0000');
+    });
+  });
+
+  it('should use celular mask', async () => {
+    renderWithTheme(
+      <TextField label="TextField" name="textfield" mask="phoneNumber" />,
+    );
+
+    const input = screen.getByRole('textbox');
+    const text = '00000000000';
+    userEvent.type(input, text);
+
+    await waitFor(() => {
+      expect(input).toHaveValue('(00) 00000-0000');
+    });
+  });
+
+  it('should remove mask', async () => {
+    renderWithTheme(
+      <TextField label="TextField" name="textfield" mask="phoneNumber" />,
+    );
+
+    const input = screen.getByRole('textbox') as HTMLInputElement;
+    const text = '00000000000';
+    userEvent.type(input, text);
+
+    await waitFor(() => {
+      expect(input).toHaveValue('(00) 00000-0000');
+      expect(text).toMatch(unmask(input.value));
+    });
   });
 
   it('should be accessible by tab', () => {

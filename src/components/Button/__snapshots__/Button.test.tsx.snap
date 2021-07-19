@@ -28,6 +28,11 @@ exports[`<Button /> should render the medium size by default 1`] = `
   transition: background-color 0.2s;
 }
 
+.c0:focus {
+  box-shadow: 0 0 0 3px rgba(75,174,227,0.4);
+  border-color: #0d6efd;
+}
+
 .c0:hover {
   background-color: #870d19;
 }

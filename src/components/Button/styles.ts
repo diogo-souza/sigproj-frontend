@@ -51,6 +51,12 @@ export const Container = styled.button<ContainerProps>`
     border: 0;
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall};
+
+    &:focus {
+      box-shadow: 0 0 0 3px ${theme.colors.focusShadow};
+      border-color: ${theme.colors.focus};
+    }
+
     ${hasIcon && ContainerModifiers.withIcon(theme)}
     ${!!size && ContainerModifiers[size](theme)};
     ${!!fullWidth && ContainerModifiers.fullWidth(theme)};

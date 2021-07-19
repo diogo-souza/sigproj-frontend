@@ -43,7 +43,7 @@ export type User = {
   carga_trabalho: string;
   titulacao: string;
 
-  provider_id?: null;
+  provider_id?: string;
   provider: ProviderTypes;
   endereco: Endereco;
   role_usuario: RolesTypes;

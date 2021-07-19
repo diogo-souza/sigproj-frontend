@@ -34,6 +34,7 @@ const MyProfileForm: React.FC = () => {
           label="Telefone"
           name="telefone"
           type="tel"
+          mask="telephoneNumber"
           initialValue={user?.telefone}
           placeholder="Insira seu telefone"
         />
@@ -41,6 +42,7 @@ const MyProfileForm: React.FC = () => {
           label="Celular"
           name="celular"
           type="tel"
+          mask="phoneNumber"
           initialValue={user?.celular}
           placeholder="Insira seu celular"
         />
@@ -48,13 +50,14 @@ const MyProfileForm: React.FC = () => {
           label="CPF"
           name="cpf"
           type="text"
+          mask="cpf"
           initialValue={user?.cpf}
           placeholder="Insira seu cpf"
         />
         <TextField
           label="Data de nascimento"
           name="data_nascimento"
-          type="text"
+          type="date"
           initialValue={user?.data_nascimento}
         />
         <TextField

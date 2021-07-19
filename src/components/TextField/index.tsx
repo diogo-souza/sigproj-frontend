@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes, useState } from 'react';
+import { cep, cpf, phoneNumber, telephoneNumber } from 'utils/masks';
 import * as S from './styles';
 
 export type TextFieldProps = {
@@ -9,7 +10,16 @@ export type TextFieldProps = {
   iconPosition?: 'left' | 'right';
   disabled?: boolean;
   error?: string;
+  mask?: 'cep' | 'cpf' | 'phoneNumber' | 'telephoneNumber';
 } & InputHTMLAttributes<HTMLInputElement>;
+
+const handleMask = {
+  cep: (e: React.ChangeEvent<HTMLInputElement>) => cep(e),
+  cpf: (e: React.ChangeEvent<HTMLInputElement>) => cpf(e),
+  phoneNumber: (e: React.ChangeEvent<HTMLInputElement>) => phoneNumber(e),
+  telephoneNumber: (e: React.ChangeEvent<HTMLInputElement>) =>
+    telephoneNumber(e),
+};
 
 const TextField: React.FC<TextFieldProps> = ({
   name,
@@ -23,11 +33,16 @@ const TextField: React.FC<TextFieldProps> = ({
   style,
   className,
   readOnly,
+  mask,
   ...props
 }: TextFieldProps) => {
-  const [value, setValue] = useState(initialValue);
+  const [value, setValue] = useState(initialValue || '');
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (mask) {
+      const currentMask = handleMask[mask];
+      currentMask(e);
+    }
     const newValue = e.currentTarget.value;
     setValue(newValue);
 
