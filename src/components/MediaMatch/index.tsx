@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { generateMedia } from 'styled-media-query';
 
 type customBreakpointsType = {
   huge: 'string';
@@ -9,13 +8,13 @@ type customBreakpointsType = {
   small: 'string';
 };
 
-const customBreakpoints = generateMedia({
+const customBreakpoints = {
   huge: '1440px',
   large: '1170px',
-  lmedium: '768px',
   medium: '769px',
+  lmedium: '768px',
   small: '450px',
-});
+};
 
 type breakpoint = keyof customBreakpointsType;
 
@@ -26,11 +25,15 @@ export type MediaMatchProps = {
 
 const mediaMatchModifiers = {
   lessThan: (size: breakpoint) => css`
-    ${customBreakpoints.lessThan(size)` display: block `}
+    @media (max-width: ${customBreakpoints[size]}) {
+      display: block;
+    }
   `,
 
   greaterThan: (size: breakpoint) => css`
-    ${customBreakpoints.greaterThan(size)` display: block `}
+    @media (min-width: ${customBreakpoints[size]}) {
+      display: block;
+    }
   `,
 };
 

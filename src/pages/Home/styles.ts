@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import media from 'styled-media-query';
 
 export const Container = styled.main`
   ${({ theme }) => css`
@@ -15,9 +14,9 @@ export const Section = styled.section`
   justify-content: space-between;
   align-self: center;
   > img {
-    ${media.lessThan('medium')`
-        display: none;
-      `}
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 `;
 
@@ -39,8 +38,8 @@ export const Content = styled.div`
       margin-top: ${theme.spacings.medium};
     }
 
-    ${media.lessThan('medium')`
-        margin: 0;
-    `}
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   `}
 `;

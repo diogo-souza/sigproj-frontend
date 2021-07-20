@@ -1,5 +1,4 @@
 import styled, { css, DefaultTheme } from 'styled-components';
-import media from 'styled-media-query';
 
 import { HeadingProps, LineColors } from '.';
 
@@ -13,9 +12,10 @@ export const ContainerModifiers = {
 
   medium: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.xlarge};
-    ${media.greaterThan('medium')`
+
+    @media (min-width: 768px) {
       font-size: ${theme.font.sizes.xxlarge};
-    `}
+    }
   `,
 
   huge: (theme: DefaultTheme) => css`

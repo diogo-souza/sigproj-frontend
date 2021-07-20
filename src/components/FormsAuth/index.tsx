@@ -5,7 +5,6 @@ import * as TextFieldStyles from 'components/TextField/styles';
 import * as ButtonStyles from 'components/Button/styles';
 import dotsImg from 'assets/images/dots.svg';
 import themes from 'styles/themes';
-import media from 'styled-media-query';
 
 export const FormContainer = styled.div`
   ${({ theme }) => css`
@@ -22,7 +21,7 @@ export const FormContainer = styled.div`
 export const FormError = styled.div`
   ${({ theme }) => css`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     color: ${themes.colors.danger};
     font-size: ${theme.font.sizes.small};
@@ -31,10 +30,6 @@ export const FormError = styled.div`
       margin-right: ${theme.spacings.xxsmall};
       font-size: 20px;
     }
-
-    ${media.lessThan('small')`
-      align-items: flex-start;
-    `}
   `}
 `;
 

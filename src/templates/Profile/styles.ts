@@ -1,14 +1,13 @@
 import styled, { css } from 'styled-components';
-import media from 'styled-media-query';
 
 export const Main = styled.main`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.medium};
-    ${media.greaterThan('medium')`
+    @media (min-width: 768px) {
       display: grid;
       grid-template-columns: 32rem 1fr;
       gap: ${theme.grid.gutter};
-    `}
+    }
   `}
 `;
 

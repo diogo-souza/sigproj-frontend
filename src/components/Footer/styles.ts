@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import * as HeadingStyles from 'components/Heading/styles';
-import media from 'styled-media-query';
 
 export const Container = styled.footer`
   ${HeadingStyles.Container} {
@@ -13,9 +12,10 @@ export const Content = styled.div`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: ${theme.spacings.medium};
-    ${media.greaterThan('medium')`
+
+    @media (min-width: 768px) {
       grid-template-columns: repeat(3, 1fr);
-    `}
+    }
   `}
 `;
 

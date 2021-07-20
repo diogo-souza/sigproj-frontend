@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import media from 'styled-media-query';
 
 export const Divider = styled.hr`
   ${({ theme }) => css`
@@ -8,8 +7,10 @@ export const Divider = styled.hr`
     width: min(calc(${theme.grid.container} + ${theme.spacings.small}), 80%);
     background: rgba(181, 181, 181, 0.3);
     border: 0;
-    ${media.greaterThan('medium')`
-      margin: calc(${theme.spacings.xxlarge} * 2.5) auto ${theme.spacings.xxlarge};
-    `}
+
+    @media (min-width: 768px) {
+      margin: calc(${theme.spacings.xxlarge} * 2.5) auto
+        ${theme.spacings.xxlarge};
+    }
   `}
 `;

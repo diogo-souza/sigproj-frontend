@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import media from 'styled-media-query';
 import { Container } from 'components/TextField/styles';
 
 export const Form = styled.form`
@@ -11,19 +10,20 @@ export const Form = styled.form`
     > button {
       margin-top: ${theme.spacings.xxlarge};
     }
-    ${media.greaterThan('medium')`
-    grid-template-columns: 1fr 1fr;
-    gap: ${theme.spacings.medium};
 
-    > button {
-      grid-column: 1 / 3;
-      justify-self: end;
-      margin-top: 0;
-    }
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: ${theme.spacings.medium};
 
-    ${Container}.fullWidth {
-      grid-column-end: span 2;
+      > button {
+        grid-column: 1 / 3;
+        justify-self: end;
+        margin-top: 0;
+      }
+
+      ${Container}.fullwidth {
+        grid-column-end: span 2;
+      }
     }
-  `}
   `}
 `;

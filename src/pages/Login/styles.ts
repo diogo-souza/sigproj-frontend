@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import media from 'styled-media-query';
 
 import * as HeadingStyles from 'components/Heading/styles';
 
@@ -14,9 +13,10 @@ export const Content = styled.div`
 export const ContentContainer = styled.div`
   ${({ theme }) => css`
     width: 30rem;
-    ${media.greaterThan('medium')`
+
+    @media (min-width: 768px) {
       width: 36rem;
-    `};
+    }
     ${HeadingStyles.Container} {
       margin-bottom: ${theme.spacings.medium};
     }
