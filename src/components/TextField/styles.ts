@@ -41,6 +41,7 @@ export const InputContainer = styled.div`
     padding: 0 12px;
     border: 0.1rem solid;
     border-color: ${theme.colors.gray};
+    height: ${theme.spacings.large};
     &:hover {
       border-color: ${theme.colors.darkGray};
     }

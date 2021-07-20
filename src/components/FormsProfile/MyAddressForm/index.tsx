@@ -3,6 +3,8 @@ import Heading from 'components/Heading';
 import TextField from 'components/TextField';
 import Button from 'components/Button';
 import { useAuth } from 'hooks/auth';
+import SelectField from 'components/SelectField';
+import { cidadeFields, estadosFields } from 'utils/fields';
 import { Form } from '..';
 
 const MyAddressForm: React.FC = () => {
@@ -19,21 +21,24 @@ const MyAddressForm: React.FC = () => {
           type="text"
           mask="cep"
           initialValue={user?.endereco.cep}
-          placeholder="Insira seu CEP"
+          placeholder="00000-000"
         />
-        <TextField
+        <SelectField
           label="Estado"
           name="estado"
-          type="text"
-          initialValue={user?.endereco.estado}
+          initialValue={
+            estadosFields.find(estado => estado.text === user?.endereco.estado)
+              ?.value
+          }
           placeholder="Selecione seu estado"
+          options={estadosFields}
         />
-        <TextField
+        <SelectField
           label="Cidade"
           name="cidade"
-          type="text"
           initialValue={user?.endereco.cidade}
           placeholder="Selecione sua cidade"
+          options={cidadeFields(user?.endereco.estado)}
         />
         <TextField
           label="Bairro"

@@ -29,6 +29,7 @@ exports[`<SelectField /> should render with error 1`] = `
 
 .c3 {
   position: relative;
+  height: 4.0rem;
   border: 0.1rem solid;
   background: #FFFFFF;
   border-radius: 0.4rem;

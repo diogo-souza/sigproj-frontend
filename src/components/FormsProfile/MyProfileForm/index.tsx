@@ -3,6 +3,8 @@ import Heading from 'components/Heading';
 import TextField from 'components/TextField';
 import { useAuth } from 'hooks/auth';
 import Button from 'components/Button';
+import SelectField from 'components/SelectField';
+import { sexoFields, tipoInstitucionalFields } from 'utils/fields';
 import { Form } from '..';
 
 const MyProfileForm: React.FC = () => {
@@ -18,7 +20,7 @@ const MyProfileForm: React.FC = () => {
           name="nome"
           type="text"
           initialValue={user?.nome}
-          placeholder="Insira seu nome"
+          placeholder="Insira seu nome completo"
           className="fullWidth"
         />
         <TextField
@@ -27,7 +29,7 @@ const MyProfileForm: React.FC = () => {
           type="email"
           value={user?.email}
           readOnly
-          placeholder="Insira seu email"
+          placeholder="Insira seu e-mail"
           className="fullWidth"
         />
         <TextField
@@ -36,7 +38,7 @@ const MyProfileForm: React.FC = () => {
           type="tel"
           mask="telephoneNumber"
           initialValue={user?.telefone}
-          placeholder="Insira seu telefone"
+          placeholder="0000-0000"
         />
         <TextField
           label="Celular"
@@ -44,7 +46,7 @@ const MyProfileForm: React.FC = () => {
           type="tel"
           mask="phoneNumber"
           initialValue={user?.celular}
-          placeholder="Insira seu celular"
+          placeholder="(00) 00000-0000"
         />
         <TextField
           label="CPF"
@@ -52,7 +54,7 @@ const MyProfileForm: React.FC = () => {
           type="text"
           mask="cpf"
           initialValue={user?.cpf}
-          placeholder="Insira seu cpf"
+          placeholder="000.000.000-00"
         />
         <TextField
           label="Data de nascimento"
@@ -60,12 +62,12 @@ const MyProfileForm: React.FC = () => {
           type="date"
           initialValue={user?.data_nascimento}
         />
-        <TextField
+        <SelectField
           label="Sexo"
           name="sexo"
-          type="text"
+          placeholder="Selecione seu sexo..."
           initialValue={user?.sexo}
-          placeholder="Selecione seu sexo"
+          options={sexoFields}
         />
         <TextField
           label="Tipo do usuário"
@@ -78,7 +80,11 @@ const MyProfileForm: React.FC = () => {
           label="Tipo institucional"
           name="institucional"
           type="text"
-          value={user?.tipo_institucional}
+          value={
+            tipoInstitucionalFields.find(
+              tipo => tipo.value === user?.tipo_institucional,
+            )?.text
+          }
           readOnly
         />
         <Button>Salvar</Button>

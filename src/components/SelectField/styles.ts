@@ -26,7 +26,7 @@ export const Select = styled.select`
 export const SelectContainer = styled.div`
   ${({ theme }) => css`
     position: relative;
-
+    height: ${theme.spacings.large};
     border: 0.1rem solid;
     background: ${theme.colors.white};
     border-radius: ${theme.border.radius};

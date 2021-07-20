@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Container } from 'components/TextField/styles';
 
 export const Form = styled.form`
   ${({ theme }) => css`
@@ -20,8 +19,7 @@ export const Form = styled.form`
         justify-self: end;
         margin-top: 0;
       }
-
-      ${Container}.fullwidth {
+      .fullWidth {
         grid-column-end: span 2;
       }
     }
