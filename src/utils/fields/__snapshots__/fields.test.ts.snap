@@ -1,0 +1,1043 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fields cargaTrabalhoFields 1`] = `
+Array [
+  Object {
+    "text": "20 horas semanais",
+    "value": "20",
+  },
+  Object {
+    "text": "30 horas semanais",
+    "value": "30",
+  },
+  Object {
+    "text": "40 horas semanais",
+    "value": "40",
+  },
+]
+`;
+
+exports[`fields categoriaFields 1`] = `
+Array [
+  Object {
+    "text": "Categoria 1",
+    "value": "categoria",
+  },
+]
+`;
+
+exports[`fields centroFields 1`] = `
+Array [
+  Object {
+    "text": "CAC - Centro de Artes e Comunicação",
+    "value": "CAC - Centro de Artes e Comunicação",
+  },
+  Object {
+    "text": "CB - Centro de Biociências",
+    "value": "CB - Centro de Biociências",
+  },
+  Object {
+    "text": "CCEN - Centro de Ciências Exatas e da Natureza",
+    "value": "CCEN - Centro de Ciências Exatas e da Natureza",
+  },
+  Object {
+    "text": "CCJ - Centro de Ciências Jurídicas",
+    "value": "CCJ - Centro de Ciências Jurídicas",
+  },
+  Object {
+    "text": "CCS - Centro de Ciências da Sáude",
+    "value": "CCS - Centro de Ciências da Sáude",
+  },
+  Object {
+    "text": "CCM - Centro de Ciências Médicas",
+    "value": "CCM - Centro de Ciências Médicas",
+  },
+  Object {
+    "text": "CCSA - Centro de Ciências Sociais Aplicadas",
+    "value": "CCSA - Centro de Ciências Sociais Aplicadas",
+  },
+  Object {
+    "text": "CE - Centro de Educação",
+    "value": "CE - Centro de Educação",
+  },
+  Object {
+    "text": "CFCH - Centro de Filosofia e Ciências Humanas",
+    "value": "CFCH - Centro de Filosofia e Ciências Humanas",
+  },
+  Object {
+    "text": "CIn - Centro de Informática",
+    "value": "CIn - Centro de Informática",
+  },
+  Object {
+    "text": "CTG - Centro de Tecnologia e Geociências",
+    "value": "CTG - Centro de Tecnologia e Geociências",
+  },
+]
+`;
+
+exports[`fields cidadeFields 1`] = `
+Array [
+  Object {
+    "text": "Abreu e Lima",
+    "value": "Abreu e Lima",
+  },
+  Object {
+    "text": "Afogados da Ingazeira",
+    "value": "Afogados da Ingazeira",
+  },
+  Object {
+    "text": "Afrânio",
+    "value": "Afrânio",
+  },
+  Object {
+    "text": "Agrestina",
+    "value": "Agrestina",
+  },
+  Object {
+    "text": "Água Preta",
+    "value": "Água Preta",
+  },
+  Object {
+    "text": "Águas Belas",
+    "value": "Águas Belas",
+  },
+  Object {
+    "text": "Alagoinha",
+    "value": "Alagoinha",
+  },
+  Object {
+    "text": "Aliança",
+    "value": "Aliança",
+  },
+  Object {
+    "text": "Altinho",
+    "value": "Altinho",
+  },
+  Object {
+    "text": "Amaraji",
+    "value": "Amaraji",
+  },
+  Object {
+    "text": "Angelim",
+    "value": "Angelim",
+  },
+  Object {
+    "text": "Araçoiaba",
+    "value": "Araçoiaba",
+  },
+  Object {
+    "text": "Araripina",
+    "value": "Araripina",
+  },
+  Object {
+    "text": "Arcoverde",
+    "value": "Arcoverde",
+  },
+  Object {
+    "text": "Barra de Guabiraba",
+    "value": "Barra de Guabiraba",
+  },
+  Object {
+    "text": "Barreiros",
+    "value": "Barreiros",
+  },
+  Object {
+    "text": "Belém de Maria",
+    "value": "Belém de Maria",
+  },
+  Object {
+    "text": "Belém de São Francisco",
+    "value": "Belém de São Francisco",
+  },
+  Object {
+    "text": "Belo Jardim",
+    "value": "Belo Jardim",
+  },
+  Object {
+    "text": "Betânia",
+    "value": "Betânia",
+  },
+  Object {
+    "text": "Bezerros",
+    "value": "Bezerros",
+  },
+  Object {
+    "text": "Bodocó",
+    "value": "Bodocó",
+  },
+  Object {
+    "text": "Bom Conselho",
+    "value": "Bom Conselho",
+  },
+  Object {
+    "text": "Bom Jardim",
+    "value": "Bom Jardim",
+  },
+  Object {
+    "text": "Bonito",
+    "value": "Bonito",
+  },
+  Object {
+    "text": "Brejão",
+    "value": "Brejão",
+  },
+  Object {
+    "text": "Brejinho",
+    "value": "Brejinho",
+  },
+  Object {
+    "text": "Brejo da Madre de Deus",
+    "value": "Brejo da Madre de Deus",
+  },
+  Object {
+    "text": "Buenos Aires",
+    "value": "Buenos Aires",
+  },
+  Object {
+    "text": "Buíque",
+    "value": "Buíque",
+  },
+  Object {
+    "text": "Cabo de Santo Agostinho",
+    "value": "Cabo de Santo Agostinho",
+  },
+  Object {
+    "text": "Cabrobó",
+    "value": "Cabrobó",
+  },
+  Object {
+    "text": "Cachoeirinha",
+    "value": "Cachoeirinha",
+  },
+  Object {
+    "text": "Caetés",
+    "value": "Caetés",
+  },
+  Object {
+    "text": "Calçado",
+    "value": "Calçado",
+  },
+  Object {
+    "text": "Calumbi",
+    "value": "Calumbi",
+  },
+  Object {
+    "text": "Camaragibe",
+    "value": "Camaragibe",
+  },
+  Object {
+    "text": "Camocim de São Félix",
+    "value": "Camocim de São Félix",
+  },
+  Object {
+    "text": "Camutanga",
+    "value": "Camutanga",
+  },
+  Object {
+    "text": "Canhotinho",
+    "value": "Canhotinho",
+  },
+  Object {
+    "text": "Capoeiras",
+    "value": "Capoeiras",
+  },
+  Object {
+    "text": "Carnaíba",
+    "value": "Carnaíba",
+  },
+  Object {
+    "text": "Carnaubeira da Penha",
+    "value": "Carnaubeira da Penha",
+  },
+  Object {
+    "text": "Carpina",
+    "value": "Carpina",
+  },
+  Object {
+    "text": "Caruaru",
+    "value": "Caruaru",
+  },
+  Object {
+    "text": "Casinhas",
+    "value": "Casinhas",
+  },
+  Object {
+    "text": "Catende",
+    "value": "Catende",
+  },
+  Object {
+    "text": "Cedro",
+    "value": "Cedro",
+  },
+  Object {
+    "text": "Chã de Alegria",
+    "value": "Chã de Alegria",
+  },
+  Object {
+    "text": "Chã Grande",
+    "value": "Chã Grande",
+  },
+  Object {
+    "text": "Condado",
+    "value": "Condado",
+  },
+  Object {
+    "text": "Correntes",
+    "value": "Correntes",
+  },
+  Object {
+    "text": "Cortês",
+    "value": "Cortês",
+  },
+  Object {
+    "text": "Cumaru",
+    "value": "Cumaru",
+  },
+  Object {
+    "text": "Cupira",
+    "value": "Cupira",
+  },
+  Object {
+    "text": "Custódia",
+    "value": "Custódia",
+  },
+  Object {
+    "text": "Dormentes",
+    "value": "Dormentes",
+  },
+  Object {
+    "text": "Escada",
+    "value": "Escada",
+  },
+  Object {
+    "text": "Exu",
+    "value": "Exu",
+  },
+  Object {
+    "text": "Feira Nova",
+    "value": "Feira Nova",
+  },
+  Object {
+    "text": "Fernando de Noronha",
+    "value": "Fernando de Noronha",
+  },
+  Object {
+    "text": "Ferreiros",
+    "value": "Ferreiros",
+  },
+  Object {
+    "text": "Flores",
+    "value": "Flores",
+  },
+  Object {
+    "text": "Floresta",
+    "value": "Floresta",
+  },
+  Object {
+    "text": "Frei Miguelinho",
+    "value": "Frei Miguelinho",
+  },
+  Object {
+    "text": "Gameleira",
+    "value": "Gameleira",
+  },
+  Object {
+    "text": "Garanhuns",
+    "value": "Garanhuns",
+  },
+  Object {
+    "text": "Glória do Goitá",
+    "value": "Glória do Goitá",
+  },
+  Object {
+    "text": "Goiana",
+    "value": "Goiana",
+  },
+  Object {
+    "text": "Granito",
+    "value": "Granito",
+  },
+  Object {
+    "text": "Gravatá",
+    "value": "Gravatá",
+  },
+  Object {
+    "text": "Iati",
+    "value": "Iati",
+  },
+  Object {
+    "text": "Ibimirim",
+    "value": "Ibimirim",
+  },
+  Object {
+    "text": "Ibirajuba",
+    "value": "Ibirajuba",
+  },
+  Object {
+    "text": "Igarassu",
+    "value": "Igarassu",
+  },
+  Object {
+    "text": "Iguaraci",
+    "value": "Iguaraci",
+  },
+  Object {
+    "text": "Inajá",
+    "value": "Inajá",
+  },
+  Object {
+    "text": "Ingazeira",
+    "value": "Ingazeira",
+  },
+  Object {
+    "text": "Ipojuca",
+    "value": "Ipojuca",
+  },
+  Object {
+    "text": "Ipubi",
+    "value": "Ipubi",
+  },
+  Object {
+    "text": "Itacuruba",
+    "value": "Itacuruba",
+  },
+  Object {
+    "text": "Itaíba",
+    "value": "Itaíba",
+  },
+  Object {
+    "text": "Itamaracá",
+    "value": "Itamaracá",
+  },
+  Object {
+    "text": "Itambé",
+    "value": "Itambé",
+  },
+  Object {
+    "text": "Itapetim",
+    "value": "Itapetim",
+  },
+  Object {
+    "text": "Itapissuma",
+    "value": "Itapissuma",
+  },
+  Object {
+    "text": "Itaquitinga",
+    "value": "Itaquitinga",
+  },
+  Object {
+    "text": "Jaboatão dos Guararapes",
+    "value": "Jaboatão dos Guararapes",
+  },
+  Object {
+    "text": "Jaqueira",
+    "value": "Jaqueira",
+  },
+  Object {
+    "text": "Jataúba",
+    "value": "Jataúba",
+  },
+  Object {
+    "text": "Jatobá",
+    "value": "Jatobá",
+  },
+  Object {
+    "text": "João Alfredo",
+    "value": "João Alfredo",
+  },
+  Object {
+    "text": "Joaquim Nabuco",
+    "value": "Joaquim Nabuco",
+  },
+  Object {
+    "text": "Jucati",
+    "value": "Jucati",
+  },
+  Object {
+    "text": "Jupi",
+    "value": "Jupi",
+  },
+  Object {
+    "text": "Jurema",
+    "value": "Jurema",
+  },
+  Object {
+    "text": "Lagoa do Carro",
+    "value": "Lagoa do Carro",
+  },
+  Object {
+    "text": "Lagoa do Itaenga",
+    "value": "Lagoa do Itaenga",
+  },
+  Object {
+    "text": "Lagoa do Ouro",
+    "value": "Lagoa do Ouro",
+  },
+  Object {
+    "text": "Lagoa dos Gatos",
+    "value": "Lagoa dos Gatos",
+  },
+  Object {
+    "text": "Lagoa Grande",
+    "value": "Lagoa Grande",
+  },
+  Object {
+    "text": "Lajedo",
+    "value": "Lajedo",
+  },
+  Object {
+    "text": "Limoeiro",
+    "value": "Limoeiro",
+  },
+  Object {
+    "text": "Macaparana",
+    "value": "Macaparana",
+  },
+  Object {
+    "text": "Machados",
+    "value": "Machados",
+  },
+  Object {
+    "text": "Manari",
+    "value": "Manari",
+  },
+  Object {
+    "text": "Maraial",
+    "value": "Maraial",
+  },
+  Object {
+    "text": "Mirandiba",
+    "value": "Mirandiba",
+  },
+  Object {
+    "text": "Moreilândia",
+    "value": "Moreilândia",
+  },
+  Object {
+    "text": "Moreno",
+    "value": "Moreno",
+  },
+  Object {
+    "text": "Nazaré da Mata",
+    "value": "Nazaré da Mata",
+  },
+  Object {
+    "text": "Olinda",
+    "value": "Olinda",
+  },
+  Object {
+    "text": "Orobó",
+    "value": "Orobó",
+  },
+  Object {
+    "text": "Orocó",
+    "value": "Orocó",
+  },
+  Object {
+    "text": "Ouricuri",
+    "value": "Ouricuri",
+  },
+  Object {
+    "text": "Palmares",
+    "value": "Palmares",
+  },
+  Object {
+    "text": "Palmeirina",
+    "value": "Palmeirina",
+  },
+  Object {
+    "text": "Panelas",
+    "value": "Panelas",
+  },
+  Object {
+    "text": "Paranatama",
+    "value": "Paranatama",
+  },
+  Object {
+    "text": "Parnamirim",
+    "value": "Parnamirim",
+  },
+  Object {
+    "text": "Passira",
+    "value": "Passira",
+  },
+  Object {
+    "text": "Paudalho",
+    "value": "Paudalho",
+  },
+  Object {
+    "text": "Paulista",
+    "value": "Paulista",
+  },
+  Object {
+    "text": "Pedra",
+    "value": "Pedra",
+  },
+  Object {
+    "text": "Pesqueira",
+    "value": "Pesqueira",
+  },
+  Object {
+    "text": "Petrolândia",
+    "value": "Petrolândia",
+  },
+  Object {
+    "text": "Petrolina",
+    "value": "Petrolina",
+  },
+  Object {
+    "text": "Poção",
+    "value": "Poção",
+  },
+  Object {
+    "text": "Pombos",
+    "value": "Pombos",
+  },
+  Object {
+    "text": "Primavera",
+    "value": "Primavera",
+  },
+  Object {
+    "text": "Quipapá",
+    "value": "Quipapá",
+  },
+  Object {
+    "text": "Quixaba",
+    "value": "Quixaba",
+  },
+  Object {
+    "text": "Recife",
+    "value": "Recife",
+  },
+  Object {
+    "text": "Riacho das Almas",
+    "value": "Riacho das Almas",
+  },
+  Object {
+    "text": "Ribeirão",
+    "value": "Ribeirão",
+  },
+  Object {
+    "text": "Rio Formoso",
+    "value": "Rio Formoso",
+  },
+  Object {
+    "text": "Sairé",
+    "value": "Sairé",
+  },
+  Object {
+    "text": "Salgadinho",
+    "value": "Salgadinho",
+  },
+  Object {
+    "text": "Salgueiro",
+    "value": "Salgueiro",
+  },
+  Object {
+    "text": "Saloá",
+    "value": "Saloá",
+  },
+  Object {
+    "text": "Sanharó",
+    "value": "Sanharó",
+  },
+  Object {
+    "text": "Santa Cruz",
+    "value": "Santa Cruz",
+  },
+  Object {
+    "text": "Santa Cruz da Baixa Verde",
+    "value": "Santa Cruz da Baixa Verde",
+  },
+  Object {
+    "text": "Santa Cruz do Capibaribe",
+    "value": "Santa Cruz do Capibaribe",
+  },
+  Object {
+    "text": "Santa Filomena",
+    "value": "Santa Filomena",
+  },
+  Object {
+    "text": "Santa Maria da Boa Vista",
+    "value": "Santa Maria da Boa Vista",
+  },
+  Object {
+    "text": "Santa Maria do Cambucá",
+    "value": "Santa Maria do Cambucá",
+  },
+  Object {
+    "text": "Santa Terezinha",
+    "value": "Santa Terezinha",
+  },
+  Object {
+    "text": "São Benedito do Sul",
+    "value": "São Benedito do Sul",
+  },
+  Object {
+    "text": "São Bento do Una",
+    "value": "São Bento do Una",
+  },
+  Object {
+    "text": "São Caitano",
+    "value": "São Caitano",
+  },
+  Object {
+    "text": "São João",
+    "value": "São João",
+  },
+  Object {
+    "text": "São Joaquim do Monte",
+    "value": "São Joaquim do Monte",
+  },
+  Object {
+    "text": "São José da Coroa Grande",
+    "value": "São José da Coroa Grande",
+  },
+  Object {
+    "text": "São José do Belmonte",
+    "value": "São José do Belmonte",
+  },
+  Object {
+    "text": "São José do Egito",
+    "value": "São José do Egito",
+  },
+  Object {
+    "text": "São Lourenço da Mata",
+    "value": "São Lourenço da Mata",
+  },
+  Object {
+    "text": "São Vicente Ferrer",
+    "value": "São Vicente Ferrer",
+  },
+  Object {
+    "text": "Serra Talhada",
+    "value": "Serra Talhada",
+  },
+  Object {
+    "text": "Serrita",
+    "value": "Serrita",
+  },
+  Object {
+    "text": "Sertânia",
+    "value": "Sertânia",
+  },
+  Object {
+    "text": "Sirinhaém",
+    "value": "Sirinhaém",
+  },
+  Object {
+    "text": "Solidão",
+    "value": "Solidão",
+  },
+  Object {
+    "text": "Surubim",
+    "value": "Surubim",
+  },
+  Object {
+    "text": "Tabira",
+    "value": "Tabira",
+  },
+  Object {
+    "text": "Tacaimbó",
+    "value": "Tacaimbó",
+  },
+  Object {
+    "text": "Tacaratu",
+    "value": "Tacaratu",
+  },
+  Object {
+    "text": "Tamandaré",
+    "value": "Tamandaré",
+  },
+  Object {
+    "text": "Taquaritinga do Norte",
+    "value": "Taquaritinga do Norte",
+  },
+  Object {
+    "text": "Terezinha",
+    "value": "Terezinha",
+  },
+  Object {
+    "text": "Terra Nova",
+    "value": "Terra Nova",
+  },
+  Object {
+    "text": "Timbaúba",
+    "value": "Timbaúba",
+  },
+  Object {
+    "text": "Toritama",
+    "value": "Toritama",
+  },
+  Object {
+    "text": "Tracunhaém",
+    "value": "Tracunhaém",
+  },
+  Object {
+    "text": "Trindade",
+    "value": "Trindade",
+  },
+  Object {
+    "text": "Triunfo",
+    "value": "Triunfo",
+  },
+  Object {
+    "text": "Tupanatinga",
+    "value": "Tupanatinga",
+  },
+  Object {
+    "text": "Tuparetama",
+    "value": "Tuparetama",
+  },
+  Object {
+    "text": "Venturosa",
+    "value": "Venturosa",
+  },
+  Object {
+    "text": "Verdejante",
+    "value": "Verdejante",
+  },
+  Object {
+    "text": "Vertente do Lério",
+    "value": "Vertente do Lério",
+  },
+  Object {
+    "text": "Vertentes",
+    "value": "Vertentes",
+  },
+  Object {
+    "text": "Vicência",
+    "value": "Vicência",
+  },
+  Object {
+    "text": "Vitória de Santo Antão",
+    "value": "Vitória de Santo Antão",
+  },
+  Object {
+    "text": "Xexéu",
+    "value": "Xexéu",
+  },
+]
+`;
+
+exports[`fields departamentoFields 1`] = `
+Array [
+  Object {
+    "text": "Departamento de Artes",
+    "value": "Artes",
+  },
+  Object {
+    "text": "Departamento de Informática",
+    "value": "Informatica",
+  },
+  Object {
+    "text": "Departamento de Letras",
+    "value": "Letras",
+  },
+  Object {
+    "text": "Departamento de Saúde",
+    "value": "Saude",
+  },
+  Object {
+    "text": "Departamento de Exatas",
+    "value": "Exatas",
+  },
+]
+`;
+
+exports[`fields estadosFields 1`] = `
+Array [
+  Object {
+    "text": "Acre",
+    "value": "AC",
+  },
+  Object {
+    "text": "Alagoas",
+    "value": "AL",
+  },
+  Object {
+    "text": "Amazonas",
+    "value": "AM",
+  },
+  Object {
+    "text": "Amapá",
+    "value": "AP",
+  },
+  Object {
+    "text": "Bahia",
+    "value": "BA",
+  },
+  Object {
+    "text": "Ceará",
+    "value": "CE",
+  },
+  Object {
+    "text": "Distrito Federal",
+    "value": "DF",
+  },
+  Object {
+    "text": "Espírito Santo",
+    "value": "ES",
+  },
+  Object {
+    "text": "Goiás",
+    "value": "GO",
+  },
+  Object {
+    "text": "Maranhão",
+    "value": "MA",
+  },
+  Object {
+    "text": "Minas Gerais",
+    "value": "MG",
+  },
+  Object {
+    "text": "Mato Grosso do Sul",
+    "value": "MS",
+  },
+  Object {
+    "text": "Mato Grosso",
+    "value": "MT",
+  },
+  Object {
+    "text": "Pará",
+    "value": "PA",
+  },
+  Object {
+    "text": "Paraíba",
+    "value": "PB",
+  },
+  Object {
+    "text": "Pernambuco",
+    "value": "PE",
+  },
+  Object {
+    "text": "Piauí",
+    "value": "PI",
+  },
+  Object {
+    "text": "Paraná",
+    "value": "PR",
+  },
+  Object {
+    "text": "Rio de Janeiro",
+    "value": "RJ",
+  },
+  Object {
+    "text": "Rio Grande do Norte",
+    "value": "RN",
+  },
+  Object {
+    "text": "Rondônia",
+    "value": "RO",
+  },
+  Object {
+    "text": "Roraima",
+    "value": "RR",
+  },
+  Object {
+    "text": "Rio Grande do Sul",
+    "value": "RS",
+  },
+  Object {
+    "text": "Santa Catarina",
+    "value": "SC",
+  },
+  Object {
+    "text": "Sergipe",
+    "value": "SE",
+  },
+  Object {
+    "text": "São Paulo",
+    "value": "SP",
+  },
+  Object {
+    "text": "Tocantins",
+    "value": "TO",
+  },
+]
+`;
+
+exports[`fields instituicaoFields 1`] = `
+Array [
+  Object {
+    "text": "Universidade Federal de Pernambuco - UFPE",
+    "value": "Universidade",
+  },
+]
+`;
+
+exports[`fields sexoFields 1`] = `
+Array [
+  Object {
+    "text": "Masculino",
+    "value": "Masculino",
+  },
+  Object {
+    "text": "Feminino",
+    "value": "Feminino",
+  },
+  Object {
+    "text": "Prefiro não informar",
+    "value": "Prefiro não informar",
+  },
+]
+`;
+
+exports[`fields tipoInstitucionalFields() 1`] = `
+Array [
+  Object {
+    "text": "Discente graduação",
+    "value": "Discente Graduacao",
+  },
+  Object {
+    "text": "Discente pós-graduação",
+    "value": "Discente Pos-Graduacao",
+  },
+  Object {
+    "text": "Docente",
+    "value": "Docente",
+  },
+  Object {
+    "text": "Técnico administrativo",
+    "value": "Tecnico Administrativo",
+  },
+  Object {
+    "text": "Outro",
+    "value": "Outro",
+  },
+]
+`;
+
+exports[`fields titulacaoFields 1`] = `
+Array [
+  Object {
+    "text": "Ensino Médio",
+    "value": "Ensino Medio",
+  },
+  Object {
+    "text": "Graduando",
+    "value": "Graduando",
+  },
+  Object {
+    "text": "Graduado",
+    "value": "Graduado",
+  },
+  Object {
+    "text": "Especialista",
+    "value": "Especialista",
+  },
+  Object {
+    "text": "Mestre",
+    "value": "Mestre",
+  },
+  Object {
+    "text": "Doutor",
+    "value": "Doutor",
+  },
+  Object {
+    "text": "Outro",
+    "value": "Outro",
+  },
+]
+`;
