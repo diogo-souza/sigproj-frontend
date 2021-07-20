@@ -49,7 +49,7 @@ exports[`<TextField /> should render with error 1`] = `
 }
 
 .c3:hover {
-  border-color: #939393;
+  border-color: #212227;
 }
 
 .c3:focus-within {
@@ -71,6 +71,7 @@ exports[`<TextField /> should render with error 1`] = `
 
 .c5 > svg {
   width: 100%;
+  color: #171923;
 }
 
 .c7 {

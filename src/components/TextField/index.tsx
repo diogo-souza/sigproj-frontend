@@ -1,6 +1,8 @@
-import Label from 'components/Label';
 import React, { InputHTMLAttributes, useState } from 'react';
+
 import { cep, cpf, phoneNumber, telephoneNumber } from 'utils/masks';
+
+import Label from 'components/Label';
 import * as S from './styles';
 
 export type TextFieldProps = {

@@ -42,7 +42,7 @@ export const InputContainer = styled.div`
     border: 0.1rem solid;
     border-color: ${theme.colors.gray};
     &:hover {
-      border-color: ${theme.colors.gray};
+      border-color: ${theme.colors.darkGray};
     }
     transition: border-color ${theme.transition.fast},
       box-shadow ${theme.transition.fast};
@@ -61,6 +61,7 @@ export const Icon = styled.div<IconPositionProps>`
     order: ${iconPosition === 'right' ? 1 : 0};
     & > svg {
       width: 100%;
+      color: ${theme.colors.titleBlack};
     }
   `}
 `;
@@ -77,10 +78,13 @@ const containerModifiers = {
     ${Input},
     ${Icon} {
       cursor: not-allowed;
-      color: ${theme.colors.gray};
+      color: ${theme.colors.darkGray};
       &::placeholder {
         color: currentColor;
       }
+    }
+    ${InputContainer} {
+      background: ${theme.colors.lightGray};
     }
   `,
   error: (theme: DefaultTheme) => css`

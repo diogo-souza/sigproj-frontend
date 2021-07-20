@@ -34,7 +34,7 @@ describe('<TextField />', () => {
     expect(screen.getByTestId('icon').parentElement).toHaveStyle({ order: 1 });
   });
 
-  it('should chenges its value when typing', async () => {
+  it('should changes its value when typing', async () => {
     renderWithTheme(<TextField label="TextField" name="textfield" />);
 
     const input = screen.getByRole('textbox');
