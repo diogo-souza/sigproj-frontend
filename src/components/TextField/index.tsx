@@ -1,3 +1,4 @@
+import Label from 'components/Label';
 import React, { InputHTMLAttributes, useState } from 'react';
 import { cep, cpf, phoneNumber, telephoneNumber } from 'utils/masks';
 import * as S from './styles';
@@ -58,7 +59,11 @@ const TextField: React.FC<TextFieldProps> = ({
       className={className}
       readOnly={readOnly}
     >
-      {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
+      {!!label && (
+        <Label htmlFor={name} disabled={disabled} hasError={!!error}>
+          {label}
+        </Label>
+      )}
       <S.InputContainer>
         {!!icon && <S.Icon iconPosition={iconPosition}>{icon}</S.Icon>}
         <S.Input

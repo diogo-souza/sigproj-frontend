@@ -1,16 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<TextField /> should render with error 1`] = `
-.c2 {
+.c1 {
   display: inline-block;
   font-size: 1.6rem;
   color: #171923;
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 0.8rem;
+  color: #dc3545;
 }
 
-.c7 {
+.c6 {
   color: #171923;
   font-family: Open-Sans,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',sans-serif;
   font-size: 1.6rem;
@@ -23,13 +24,13 @@ exports[`<TextField /> should render with error 1`] = `
   padding-left: 1.6rem;
 }
 
-.c7:-webkit-autofill {
+.c6:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 2.4rem #FFFFFF inset;
   -webkit-filter: none;
   filter: none;
 }
 
-.c4 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -47,16 +48,16 @@ exports[`<TextField /> should render with error 1`] = `
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.c4:hover {
+.c3:hover {
   border-color: #939393;
 }
 
-.c4:focus-within {
+.c3:focus-within {
   border-color: #0d6efd;
   box-shadow: 0 0 0 0.3rem rgba(75,174,227,0.4);
 }
 
-.c6 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,25 +69,24 @@ exports[`<TextField /> should render with error 1`] = `
   order: 0;
 }
 
-.c6 > svg {
+.c5 > svg {
   width: 100%;
 }
 
-.c8 {
+.c7 {
   color: #dc3545;
   font-size: 1.4rem;
 }
 
-.c0 .c3 {
+.c0 .c2 {
   border-color: #dc3545;
 }
 
-.c0 .c3:focus-within {
+.c0 .c2:focus-within {
   box-shadow: 0 0 0 0.3rem rgba(220,53,69,0.4);
 }
 
-.c0 .c5,
-.c0 .c1 {
+.c0 .c4 {
   color: #dc3545;
 }
 
@@ -94,16 +94,16 @@ exports[`<TextField /> should render with error 1`] = `
   class="c0"
 >
   <label
-    class="c1 c2"
+    class="c1"
     for="TextField"
   >
     TextField
   </label>
   <div
-    class="c3 c4"
+    class="c2 c3"
   >
     <div
-      class="c5 c6"
+      class="c4 c5"
     >
       <svg
         data-testid="icon"
@@ -121,14 +121,14 @@ exports[`<TextField /> should render with error 1`] = `
       </svg>
     </div>
     <input
-      class="c7"
+      class="c6"
       id="TextField"
       name="TextField"
       value=""
     />
   </div>
   <p
-    class="c8"
+    class="c7"
     role="alert"
   >
     Error message

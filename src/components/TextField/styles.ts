@@ -7,17 +7,6 @@ type ContainerProps = Pick<TextFieldProps, 'disabled' | 'readOnly'> & {
   error?: boolean;
 };
 
-export const Label = styled.label`
-  ${({ theme }) => css`
-    display: inline-block;
-    font-size: ${theme.font.sizes.medium};
-    color: ${theme.colors.titleBlack};
-    font-weight: ${theme.font.bold};
-    cursor: pointer;
-    margin-bottom: ${theme.spacings.xxsmall};
-  `}
-`;
-
 export const Input = styled.input<IconPositionProps>`
   ${({ theme, iconPosition, icon }) => css`
     color: ${theme.colors.titleBlack};
@@ -85,7 +74,6 @@ export const Error = styled.p`
 
 const containerModifiers = {
   disabled: (theme: DefaultTheme) => css`
-    ${Label},
     ${Input},
     ${Icon} {
       cursor: not-allowed;
@@ -102,8 +90,7 @@ const containerModifiers = {
         box-shadow: 0 0 0 0.3rem ${theme.colors.dangerShadow};
       }
     }
-    ${Icon},
-    ${Label} {
+    ${Icon} {
       color: ${theme.colors.danger};
     }
   `,
