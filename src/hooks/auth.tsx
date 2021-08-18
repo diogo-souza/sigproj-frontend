@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useState, useContext } from 'react';
-import { User, UsersPermissionsLoginInput } from 'types/globalTypes';
+import { User, UsersPermissionsLoginInput } from 'types/authTypes';
 import { formatUser } from 'utils/formatters';
 
 import api from '../services/api';

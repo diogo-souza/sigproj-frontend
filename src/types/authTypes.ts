@@ -1,5 +1,3 @@
-/* Auth Types START */
-
 export type UsersPermissionsLoginInput = {
   email: string;
   password: string;
@@ -53,5 +51,3 @@ export type AuthState = {
   token: string;
   user: User;
 };
-
-/* Auth Types END */

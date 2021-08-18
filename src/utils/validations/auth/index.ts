@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { UsersPermissionsLoginInput } from 'types/globalTypes';
+import { UsersPermissionsLoginInput } from 'types/authTypes';
 import { fieldsValidations, getFieldErrors } from '..';
 
 export function signInValidate(values: UsersPermissionsLoginInput) {

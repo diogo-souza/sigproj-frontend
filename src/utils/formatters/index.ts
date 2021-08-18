@@ -1,4 +1,4 @@
-import { User } from 'types/globalTypes';
+import { User } from 'types/authTypes';
 
 export const formatDate = (date: string) =>
   new Date(date).toLocaleDateString('pt-br', {

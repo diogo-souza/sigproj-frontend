@@ -1,6 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
-import { UsersPermissionsLoginInput } from 'types/globalTypes';
+import { UsersPermissionsLoginInput } from 'types/authTypes';
 import SignInForm from '.';
 
 const mockLogin = jest.fn(({ email, password }: UsersPermissionsLoginInput) => {
