@@ -58,7 +58,7 @@ const Home: React.FC = () => {
               </p>
               <Button
                 onClick={() => {
-                  push('consulta');
+                  push('editais?pagina=1');
                 }}
                 icon={<SearchIcon />}
               >

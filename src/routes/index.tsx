@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Home from 'pages/Home';
-import Consulta from 'pages/Consulta';
+import Editais from 'pages/Editais';
 import FaleConosco from 'pages/FaleConosco';
 import Login from 'pages/Login';
 import Dashboard from 'pages/Dashboard';
@@ -17,7 +17,7 @@ import Switch from './Switch';
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={Home} />
-    <Route path="/consulta" exact component={Consulta} />
+    <Route path="/editais" exact component={Editais} />
     <Route path="/fale-conosco" exact component={FaleConosco} />
     <Route path="/login" exact component={Login} />
     <Route path="/dashboard" exact component={Dashboard} isPrivate />
