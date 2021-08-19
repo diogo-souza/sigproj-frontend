@@ -45,6 +45,8 @@ export default {
     lightGray: '#E1E1E1',
     white: '#FFFFFF',
 
+    shadow: 'rgba(181, 181, 181, 0.3)',
+
     titleBlack: '#171923',
     titleWhite: '#FFFFFF',
     bodyBlack: '#939393',

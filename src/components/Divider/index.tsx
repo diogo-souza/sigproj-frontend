@@ -5,7 +5,7 @@ export const Divider = styled.hr`
     margin: ${theme.spacings.xxlarge} auto ${theme.spacings.medium};
     height: 0.1rem;
     width: min(calc(${theme.grid.container} + ${theme.spacings.small}), 80%);
-    background: rgba(181, 181, 181, 0.3);
+    background: ${theme.colors.shadow};
     border: 0;
 
     @media (min-width: 768px) {

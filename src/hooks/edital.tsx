@@ -1,17 +1,18 @@
 import React, { createContext, useCallback, useContext } from 'react';
-import { EditaisData, GetEditaisParams } from 'types/editalTypes';
+import { EditalData, GetEditaisParams } from 'types/editalTypes';
 import { PageInfoData } from 'types/globalTypes';
 import { formatDate } from 'utils/formatters';
 
 import api from '../services/api';
 
 type GetEditaisResponse = {
-  content: EditaisData[];
+  content: EditalData[];
   pageInfo: PageInfoData;
 };
 
 type EditalContextData = {
   getEditais(params: GetEditaisParams): Promise<GetEditaisResponse>;
+  getEditalById(id: string): Promise<EditalData>;
 };
 
 const EditalContext = createContext<EditalContextData>({} as EditalContextData);
@@ -20,11 +21,11 @@ const EditalProvider: React.FC = ({ children }) => {
   const getEditais = useCallback(async (params: GetEditaisParams) => {
     const response = await api.get('editais', { params });
 
-    const content = response.data.content.map((edital: EditaisData) => ({
+    const content = response.data.content.map((edital: EditalData) => ({
       ...edital,
       data_inicio: formatDate(edital.data_inicio),
       data_fim: formatDate(edital.data_fim),
-    })) as EditaisData[];
+    })) as EditalData[];
 
     const pageInfo = {
       currentPage: Number(response.data.pageable.pageNumber) + 1,
@@ -36,8 +37,20 @@ const EditalProvider: React.FC = ({ children }) => {
     return { content, pageInfo };
   }, []);
 
+  const getEditalById = useCallback(async (id: string) => {
+    const response = await api.get(`editais/${id}`);
+
+    const edital = {
+      ...response.data,
+      data_inicio: formatDate(response.data.data_inicio),
+      data_fim: formatDate(response.data.data_fim),
+    } as EditalData;
+
+    return edital;
+  }, []);
+
   return (
-    <EditalContext.Provider value={{ getEditais }}>
+    <EditalContext.Provider value={{ getEditais, getEditalById }}>
       {children}
     </EditalContext.Provider>
   );

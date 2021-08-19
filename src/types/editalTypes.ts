@@ -7,7 +7,7 @@ export type GetEditaisParams = {
   limite?: number;
 };
 
-export type EditaisData = {
+export type EditalData = {
   uuid: string;
   titulo: string;
   ativo: boolean;
