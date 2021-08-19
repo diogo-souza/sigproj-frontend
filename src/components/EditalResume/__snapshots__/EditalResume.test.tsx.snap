@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EditalResume /> should render the heading 1`] = `
+.c2 {
+  font-weight: 600;
+  border-bottom: 1px solid #939393;
+}
+
+.c2 > h3 {
+  font-size: 2.8rem;
+}
+
+.c2 > p {
+  color: #606060;
+}
+
+.c4 > div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.c4 > div + div {
+  border-top: 1px solid #939393;
+}
+
+.c5 {
+  color: #606060;
+}
+
+.c8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex: 1 0 50%;
+  -ms-flex: 1 0 50%;
+  flex: 1 0 50%;
+  color: #FFFFFF;
+}
+
+.c8 p {
+  font-size: 1.4rem;
+  margin-right: 0.8rem;
+  background-color: #117d8c;
+  border-radius: 0.4rem;
+  padding: calc(5.6px * 0.9) calc(10.4px * 0.9);
+  margin-top: 8px;
+}
+
+.c8 p:last-child {
+  margin-right: 0;
+}
+
+.c6 {
+  color: #000;
+  font-weight: 600;
+}
+
+.c6 > div {
+  font-weight: 500;
+}
+
+.c6 > div h2 {
+  font-weight: 600;
+  font-size: calc(1.8rem * 2);
+  margin-bottom: 2.5rem;
+}
+
+.c6 > div p {
+  text-align: justify;
+}
+
+.c6 > div > div + div {
+  margin-top: 1.6rem;
+}
+
+.c6 .c7 {
+  margin-top: -8px;
+}
+
+.c0 {
+  border: 1px solid #939393;
+  border-radius: 0.4rem;
+  background-color: #FFFFFF;
+}
+
+.c0 .c1 {
+  padding: calc(2.4rem - 4px) 2.4rem;
+}
+
+.c0 .c3 > * {
+  padding: calc(2.4rem - 4px) 2.4rem;
+}
+
+@media (max-width:768px) {
+  .c2 > h3 {
+    font-size: 2.0rem;
+  }
+
+  .c2 > p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c4 > div {
+    display: block;
+  }
+}
+
+@media (max-width:768px) {
+  .c6 {
+    margin-top: calc(0.8rem / 2);
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1 c2"
+  >
+    <h3>
+      Informações do Edital
+    </h3>
+    <p>
+      Edital de Apoio ou de Fluxo Contínuo
+    </p>
+  </div>
+  <dl
+    class="c3 c4"
+  >
+    <div>
+      <dt
+        class="c5"
+      >
+        Título
+      </dt>
+      <dd
+        class="c6"
+      >
+        Title 1
+      </dd>
+    </div>
+    <div>
+      <dt
+        class="c5"
+      >
+        Chamada
+      </dt>
+      <dd
+        class="c6"
+      >
+        headline 1
+      </dd>
+    </div>
+    <div>
+      <dt
+        class="c5"
+      >
+        Data de inicio
+      </dt>
+      <dd
+        class="c6"
+      >
+        19/08/2021
+      </dd>
+    </div>
+    <div>
+      <dt
+        class="c5"
+      >
+        Data final
+      </dt>
+      <dd
+        class="c6"
+      >
+        20/08/2021
+      </dd>
+    </div>
+    <div>
+      <dt
+        class="c5"
+      >
+        Modalidades
+      </dt>
+      <dd
+        class="c6"
+      >
+        <div
+          class="c7 c8"
+        >
+          <p>
+            Programa
+          </p>
+          <p>
+            Projeto
+          </p>
+        </div>
+      </dd>
+    </div>
+    <div>
+      <dt
+        class="c5"
+      >
+        Corpo
+      </dt>
+      <dd
+        class="c6"
+      >
+        <div>
+          <p>
+            Insira o corpo do edital aqui
+          </p>
+          
+
+        </div>
+      </dd>
+    </div>
+  </dl>
+</div>
+`;
