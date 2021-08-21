@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 
-import { FormLink, FormContainer } from '.';
+import { FormLink, FormContainer, FormLoading } from '.';
 
 describe('<Form />', () => {
-  it('should render the heading', () => {
+  it('should render my link', () => {
     const { container } = renderWithTheme(
       <FormContainer>
         <FormLink>
@@ -60,5 +61,14 @@ describe('<Form />', () => {
         </div>
       </body>
     `);
+  });
+
+  it('should render loading img', () => {
+    renderWithTheme(
+      <FormContainer>
+        <FormLoading />
+      </FormContainer>,
+    );
+    expect(screen.getByAltText(/carregando\.\.\./i));
   });
 });

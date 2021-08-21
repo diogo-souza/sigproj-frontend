@@ -1,6 +1,17 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
+
+import userEvent from '@testing-library/user-event';
 import Menu from '.';
+
+const mockHistoryPush = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: () => ({
+    push: mockHistoryPush,
+  }),
+}));
 
 describe('<Menu />', () => {
   it('should render the menu', () => {
@@ -31,5 +42,25 @@ describe('<Menu />', () => {
       opacity: 0,
       'pointer-events': 'none',
     });
+  });
+
+  it('should navigating to Login in Desktop version', () => {
+    renderWithTheme(<Menu />);
+    const buttons = screen.getAllByText(/logar/i);
+    expect(buttons.length).toBe(2);
+
+    userEvent.click(buttons[0]);
+
+    expect(mockHistoryPush).toHaveBeenCalledWith('/login');
+  });
+
+  it('should navigating to Login in Mobile version', () => {
+    renderWithTheme(<Menu />);
+    const buttons = screen.getAllByText(/logar/i);
+    expect(buttons.length).toBe(2);
+
+    userEvent.click(buttons[1]);
+
+    expect(mockHistoryPush).toHaveBeenCalledWith('/login');
   });
 });
