@@ -967,6 +967,27 @@ Array [
 ]
 `;
 
+exports[`fields modalidadeFields 1`] = `
+Array [
+  Object {
+    "text": "Curso",
+    "value": "curso",
+  },
+  Object {
+    "text": "Programa",
+    "value": "programa",
+  },
+  Object {
+    "text": "Projeto",
+    "value": "projeto",
+  },
+  Object {
+    "text": "Evento",
+    "value": "evento",
+  },
+]
+`;
+
 exports[`fields sexoFields 1`] = `
 Array [
   Object {

@@ -9,6 +9,7 @@ import {
   departamentoFields,
   instituicaoFields,
   titulacaoFields,
+  modalidadeFields,
 } from '.';
 
 describe('fields', () => {
@@ -41,5 +42,8 @@ describe('fields', () => {
   });
   it('titulacaoFields', () => {
     expect(titulacaoFields).toMatchSnapshot();
+  });
+  it('modalidadeFields', () => {
+    expect(modalidadeFields).toMatchSnapshot();
   });
 });

@@ -95,3 +95,10 @@ export const instituicaoFields = [
 ];
 
 export const categoriaFields = [{ value: 'categoria', text: 'Categoria 1' }];
+
+export const modalidadeFields = [
+  { value: 'curso', text: 'Curso' },
+  { value: 'programa', text: 'Programa' },
+  { value: 'projeto', text: 'Projeto' },
+  { value: 'evento', text: 'Evento' },
+];

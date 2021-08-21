@@ -12,6 +12,8 @@ import MinhaSenha from 'pages/Perfil/MinhaSenha';
 import Endereco from 'pages/Perfil/Endereco';
 import Escolaridade from 'pages/Perfil/Escolaridade';
 
+import Page404 from 'pages/Page404';
+
 import Route from './Route';
 import Switch from './Switch';
 
@@ -32,6 +34,7 @@ const Routes: React.FC = () => (
       component={Escolaridade}
       isPrivate
     />
+    <Route path="*" component={Page404} />
   </Switch>
 );
 
