@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+
 import Base from 'templates/Base';
-import EditalResume from 'components/EditalResume';
-import { Container } from 'components/Container';
+import EditalTemplate from 'templates/Edital';
+
 import { EditalData } from 'types/editalTypes';
 import { useParams } from 'react-router-dom';
 import { useEdital } from 'hooks/edital';
@@ -14,19 +15,20 @@ const Edital: React.FC = () => {
   const { getEditalById } = useEdital();
   const { id } = useParams<EditalParams>();
   const [edital, setEdital] = useState<EditalData>({} as EditalData);
+  const [loading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     getEditalById(id).then(response => {
       setEdital(response);
+      setIsLoading(false);
     });
-  }, [id, getEditalById]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   return (
     <Base>
-      <Container>
-        <h1>Edital</h1>
-        <EditalResume edital={edital} />
-      </Container>
+      <EditalTemplate edital={edital} isLoading={loading} />
     </Base>
   );
 };

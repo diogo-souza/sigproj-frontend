@@ -10,14 +10,12 @@ export const Header = styled.div`
     }
     > p {
       color: ${darken(0.2, theme.colors.gray)};
+      font-size: ${theme.font.sizes.medium};
     }
 
     @media (max-width: 768px) {
       > h3 {
         font-size: ${theme.font.sizes.xlarge};
-      }
-      > p {
-        font-size: ${theme.font.sizes.medium};
       }
     }
   `}

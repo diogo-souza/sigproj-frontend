@@ -38,14 +38,12 @@ const EditalResume: React.FC<EditalResumeProps> = ({
         <div>
           <S.Field>Modalidades</S.Field>
           <S.Data>
-            {edital.modalidades ? (
+            {edital.modalidades && (
               <S.Modalities>
                 {edital.modalidades.map(modalidade => (
                   <p key={modalidade}>{modalidade}</p>
                 ))}
               </S.Modalities>
-            ) : (
-              []
             )}
           </S.Data>
         </div>

@@ -12,6 +12,7 @@ exports[`<EditalResume /> should render the heading 1`] = `
 
 .c2 > p {
   color: #606060;
+  font-size: 1.6rem;
 }
 
 .c4 > div {
@@ -98,10 +99,6 @@ exports[`<EditalResume /> should render the heading 1`] = `
 @media (max-width:768px) {
   .c2 > h3 {
     font-size: 2.0rem;
-  }
-
-  .c2 > p {
-    font-size: 1.6rem;
   }
 }
 
