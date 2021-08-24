@@ -5,6 +5,7 @@ import Label from 'components/Label';
 import * as S from './styles';
 
 export type SelectFieldProps = {
+  onSelectChange?: (value: string) => void;
   label?: string;
   initialValue?: string;
   disabled?: boolean;
@@ -25,6 +26,7 @@ const SelectField: React.FC<SelectFieldProps> = ({
   style,
   className,
   options,
+  onSelectChange,
   ...props
 }: SelectFieldProps) => {
   const [selected, setSelected] = useState(initialValue);
@@ -32,6 +34,9 @@ const SelectField: React.FC<SelectFieldProps> = ({
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newValue = e.currentTarget.value;
     setSelected(newValue);
+
+    // eslint-disable-next-line no-unused-expressions
+    !!onSelectChange && onSelectChange(newValue);
   };
 
   return (

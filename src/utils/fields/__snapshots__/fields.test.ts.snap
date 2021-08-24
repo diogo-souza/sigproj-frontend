@@ -971,19 +971,19 @@ exports[`fields modalidadeFields 1`] = `
 Array [
   Object {
     "text": "Curso",
-    "value": "curso",
+    "value": "Curso",
   },
   Object {
     "text": "Programa",
-    "value": "programa",
+    "value": "Programa",
   },
   Object {
     "text": "Projeto",
-    "value": "projeto",
+    "value": "Projeto",
   },
   Object {
     "text": "Evento",
-    "value": "evento",
+    "value": "Evento",
   },
 ]
 `;

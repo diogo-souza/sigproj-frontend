@@ -97,8 +97,8 @@ export const instituicaoFields = [
 export const categoriaFields = [{ value: 'categoria', text: 'Categoria 1' }];
 
 export const modalidadeFields = [
-  { value: 'curso', text: 'Curso' },
-  { value: 'programa', text: 'Programa' },
-  { value: 'projeto', text: 'Projeto' },
-  { value: 'evento', text: 'Evento' },
+  { value: 'Curso', text: 'Curso' },
+  { value: 'Programa', text: 'Programa' },
+  { value: 'Projeto', text: 'Projeto' },
+  { value: 'Evento', text: 'Evento' },
 ];
