@@ -1,55 +1,52 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import { useEdital } from 'hooks/edital';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-import Base from 'templates/Base';
-import EditalList from 'components/EditalList';
-import Pagination from 'components/Pagination';
+import EditaisTemplate from 'templates/Editais';
 
-import { Container } from 'components/Container';
 import { EditalData } from 'types/editalTypes';
 import { PageInfoData } from 'types/globalTypes';
 
+import { parseQueryToObject } from 'utils/filter';
+
 const Editais: React.FC = () => {
-  const { search } = useLocation();
-  const { push } = useHistory();
-  const searchParams = useMemo(() => new URLSearchParams(search), [search]);
+  const { search: query } = useLocation();
+
+  const searchParams = useMemo(() => parseQueryToObject(query), [query]);
 
   const { getEditais } = useEdital();
-
-  const [editais, setEditais] = useState<EditalData[]>([]);
+  const [editais, setEditais] = useState<EditalData[]>();
   const [pageInfo, setPageInfo] = useState<PageInfoData>();
-  const [page, setPage] = useState(Number(searchParams.get('pagina')) || 1);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [page, setPage] = useState(() =>
+    searchParams.pagina ? searchParams.pagina : 1,
+  );
 
   useEffect(() => {
-    getEditais({ pagina: Number(searchParams.get('pagina')) }).then(
-      response => {
-        setEditais(response.content);
-        setPageInfo(response.pageInfo);
-      },
-    );
-  }, [searchParams, getEditais]);
+    setIsLoading(true);
+    getEditais(searchParams).then(response => {
+      setEditais(response.content);
+      setPageInfo(response.pageInfo);
+      setIsLoading(false);
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   useEffect(() => {
-    push(`editais?pagina=${page}`);
-  }, [page, push]);
+    console.log(isLoading);
+  }, [isLoading]);
 
   return (
-    <Base>
-      <Container>
-        <h1>Editais</h1>
-        <EditalList editais={editais} />
-        <Pagination
-          currentPage={page || 1}
-          elementsPerPage={pageInfo?.elementsPerPage || 4}
-          totalCountOfElements={pageInfo?.totalCountOfElements || 100}
-          onPageChange={setPage}
-          lastPage={pageInfo?.totalPages || 1}
-        />
-      </Container>
-    </Base>
+    <EditaisTemplate
+      page={Number(page)}
+      editais={editais}
+      pageInfo={pageInfo}
+      isLoading={isLoading}
+      onPageChange={setPage}
+    />
   );
 };
-
 export default Editais;

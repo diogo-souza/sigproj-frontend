@@ -54,6 +54,9 @@ const SignInForm: React.FC = () => {
       {formError && (
         <FormError>
           <ErrorIcon />
+          {/* TODO Pegar a menssagem do backend
+            Verificar se o erro eh nas credencias ou no sistema
+          */}
           Ocorreu um erro ao fazer login, cheque suas credenciais
         </FormError>
       )}

@@ -38,6 +38,7 @@ const FormEditalFilter: React.FC<FormEditalFilterProps> = ({
 
   const handleFilter = (event: React.FormEvent) => {
     event.preventDefault();
+    // TODO Refatorar para poder utilizar este Cleaner em outros lugares
     const cleanValues = Object.fromEntries(
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       Object.entries(values).filter(([_, v]) => v !== ''),
