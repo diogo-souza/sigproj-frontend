@@ -19,34 +19,42 @@ const EditalContext = createContext<EditalContextData>({} as EditalContextData);
 
 const EditalProvider: React.FC = ({ children }) => {
   const getEditais = useCallback(async (params: GetEditaisParams) => {
-    const response = await api.get('editais', { params });
+    try {
+      const response = await api.get('editais', { params });
 
-    const content = response.data.content.map((edital: EditalData) => ({
-      ...edital,
-      data_inicio: formatDate(edital.data_inicio),
-      data_fim: formatDate(edital.data_fim),
-    })) as EditalData[];
+      const content = response.data.content.map((edital: EditalData) => ({
+        ...edital,
+        data_inicio: formatDate(edital.data_inicio),
+        data_fim: formatDate(edital.data_fim),
+      })) as EditalData[];
 
-    const pageInfo = {
-      currentPage: Number(response.data.pageable.pageNumber) + 1,
-      elementsPerPage: Number(response.data.pageable.pageSize),
-      totalPages: Number(response.data.totalPages),
-      totalCountOfElements: Number(response.data.totalElements),
-    } as PageInfoData;
+      const pageInfo = {
+        currentPage: Number(response.data.pageable.pageNumber) + 1,
+        elementsPerPage: Number(response.data.pageable.pageSize),
+        totalPages: Number(response.data.totalPages),
+        totalCountOfElements: Number(response.data.totalElements),
+      } as PageInfoData;
 
-    return { content, pageInfo };
+      return { content, pageInfo };
+    } catch (e) {
+      throw new Error(e.response.data.titulo);
+    }
   }, []);
 
   const getEditalById = useCallback(async (id: string) => {
-    const response = await api.get(`editais/${id}`);
+    try {
+      const response = await api.get(`editais/${id}`);
 
-    const edital = {
-      ...response.data,
-      data_inicio: formatDate(response.data.data_inicio),
-      data_fim: formatDate(response.data.data_fim),
-    } as EditalData;
+      const edital = {
+        ...response.data,
+        data_inicio: formatDate(response.data.data_inicio),
+        data_fim: formatDate(response.data.data_fim),
+      } as EditalData;
 
-    return edital;
+      return edital;
+    } catch (e) {
+      throw new Error(e.response.data.titulo);
+    }
   }, []);
 
   return (

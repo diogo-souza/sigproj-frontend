@@ -108,6 +108,10 @@ export const Container = styled.div`
         border-radius: 0 0 ${theme.border.radius} ${theme.border.radius};
       }
 
+      &:only-child {
+        border-radius: ${theme.border.radius};
+      }
+
       transition: box-shadow ${theme.transition.default};
       &:hover {
         box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,

@@ -27,17 +27,19 @@ const Editais: React.FC = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getEditais(searchParams).then(response => {
-      setEditais(response.content);
-      setPageInfo(response.pageInfo);
-      setIsLoading(false);
-    });
+    getEditais(searchParams)
+      .then(response => {
+        setEditais(response.content);
+        setPageInfo(response.pageInfo);
+      })
+      .catch(() => {
+        // TODO Podemos utilizar esse erro do backend para algo ?
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
-
-  useEffect(() => {
-    console.log(isLoading);
-  }, [isLoading]);
 
   return (
     <EditaisTemplate

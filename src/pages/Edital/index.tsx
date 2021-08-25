@@ -19,10 +19,16 @@ const Edital: React.FC = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    getEditalById(id).then(response => {
-      setEdital(response);
-      setIsLoading(false);
-    });
+    getEditalById(id)
+      .then(response => {
+        setEdital(response);
+      })
+      .catch(() => {
+        // TODO Podemos utilizar esse erro do backend para algo ?
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
