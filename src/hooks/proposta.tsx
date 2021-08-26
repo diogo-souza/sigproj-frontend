@@ -13,6 +13,7 @@ type GetPropostasResponse = {
 
 type PropostaContextData = {
   getPropostas(params: GetPropostasParams): Promise<GetPropostasResponse>;
+  getPropostaById(id: string): Promise<PropostaData>;
 };
 
 const PropostaContext = createContext<PropostaContextData>(
@@ -39,8 +40,20 @@ const PropostaProvider: React.FC = ({ children }) => {
     }
   }, []);
 
+  const getPropostaById = useCallback(async (id: string) => {
+    try {
+      const response = await api.get(`propostas/buscar/${id}`);
+
+      const proposta = response.data as PropostaData;
+
+      return proposta;
+    } catch (e) {
+      throw new Error(e.response.data.titulo);
+    }
+  }, []);
+
   return (
-    <PropostaContext.Provider value={{ getPropostas }}>
+    <PropostaContext.Provider value={{ getPropostas, getPropostaById }}>
       {children}
     </PropostaContext.Provider>
   );
