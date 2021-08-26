@@ -8,8 +8,9 @@ export const fieldsValidations = {
       'string.email': 'Digite um E-mail válido',
       'string.empty': 'O e-mail é obrigatório',
     }),
-  password: Joi.string().min(6).required().messages({
+  password: Joi.string().min(6).max(16).required().messages({
     'string.min': 'No mínimo 6 caracteres',
+    'string.max': 'Máximo de 16 caracteres',
     'string.empty': 'A senha é obrigatória',
   }),
 };

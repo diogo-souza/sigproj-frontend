@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import dotsImg from 'assets/images/dots.svg';
 
 export const Form = styled.form`
   ${({ theme }) => css`
@@ -24,4 +25,27 @@ export const Form = styled.form`
       }
     }
   `}
+`;
+
+export const FormError = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: ${theme.colors.danger};
+    font-size: ${theme.font.sizes.small};
+
+    svg {
+      margin-right: ${theme.spacings.xxsmall};
+      font-size: 20px;
+    }
+  `}
+`;
+
+export const FormLoading = styled.img.attrs(() => ({
+  src: dotsImg,
+  alt: 'Carregando...',
+}))`
+  color: #000;
+  width: 4rem;
 `;

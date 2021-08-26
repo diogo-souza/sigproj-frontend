@@ -4,7 +4,6 @@ import { darken } from 'polished';
 import * as TextFieldStyles from 'components/TextField/styles';
 import * as ButtonStyles from 'components/Button/styles';
 import dotsImg from 'assets/images/dots.svg';
-import themes from 'styles/themes';
 
 export const FormContainer = styled.div`
   ${({ theme }) => css`
@@ -23,7 +22,7 @@ export const FormError = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    color: ${themes.colors.danger};
+    color: ${theme.colors.danger};
     font-size: ${theme.font.sizes.small};
 
     svg {

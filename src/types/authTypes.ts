@@ -3,6 +3,12 @@ export type UsersPermissionsLoginInput = {
   password: string;
 };
 
+export type UsersUpdatePasswordInput = {
+  password: string;
+  new_password: string;
+  confirm_new_password: string;
+};
+
 type RolesTypes =
   | 'ROLE_ROOT'
   | 'ROLE_ADMIN'
