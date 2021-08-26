@@ -2,10 +2,13 @@ import React from 'react';
 
 import { AuthProvider } from './auth';
 import { EditalProvider } from './edital';
+import { PropostaProvider } from './proposta';
 
 const AppProvider: React.FC = ({ children }) => (
   <AuthProvider>
-    <EditalProvider>{children}</EditalProvider>
+    <EditalProvider>
+      <PropostaProvider>{children}</PropostaProvider>
+    </EditalProvider>
   </AuthProvider>
 );
 
