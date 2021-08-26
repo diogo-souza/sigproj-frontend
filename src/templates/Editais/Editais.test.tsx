@@ -54,52 +54,20 @@ describe('<EditaisTemplate />', () => {
 
   it('should render loading when data is being fetched', () => {
     renderWithTheme(
-      <EditaisTemplate
-        page={1}
-        pageInfo={{
-          currentPage: 1,
-          elementsPerPage: 4,
-          totalCountOfElements: 1,
-          totalPages: 1,
-        }}
-        isLoading
-        onPageChange={setState}
-      />,
+      <EditaisTemplate page={1} isLoading onPageChange={setState} />,
     );
     expect(screen.getByText(/carregando\.\.\./i)).toBeInTheDocument();
   });
 
   it('should render empty when no Editais found', () => {
-    renderWithTheme(
-      <EditaisTemplate
-        page={1}
-        pageInfo={{
-          currentPage: 1,
-          elementsPerPage: 4,
-          totalCountOfElements: 1,
-          totalPages: 1,
-        }}
-        onPageChange={setState}
-      />,
-    );
+    renderWithTheme(<EditaisTemplate page={1} onPageChange={setState} />);
     expect(
       screen.getByText(/Não encontramos editais para esses filtros/i),
     ).toBeInTheDocument();
   });
 
   it('should render empty when no Editais found', () => {
-    renderWithTheme(
-      <EditaisTemplate
-        page={1}
-        pageInfo={{
-          currentPage: 1,
-          elementsPerPage: 4,
-          totalCountOfElements: 1,
-          totalPages: 1,
-        }}
-        onPageChange={setState}
-      />,
-    );
+    renderWithTheme(<EditaisTemplate page={1} onPageChange={setState} />);
     expect(
       screen.getByText(/Não encontramos editais para esses filtros/i),
     ).toBeInTheDocument();

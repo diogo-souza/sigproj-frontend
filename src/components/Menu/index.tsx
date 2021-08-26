@@ -27,6 +27,7 @@ const Menu: React.FC = () => {
         <S.MenuNav>
           <S.MenuLink to="/">Inicio</S.MenuLink>
           <S.MenuLink to="/editais?pagina=1">Editais</S.MenuLink>
+          <S.MenuLink to="/propostas?pagina=1">Propostas</S.MenuLink>
           <S.MenuLink to="/fale-conosco">Fale Conosco</S.MenuLink>
           <Button onClick={() => push('/login')} icon={<UserIcon />}>
             Logar
@@ -39,6 +40,7 @@ const Menu: React.FC = () => {
         <S.MenuNav>
           <S.MenuLink to="/">Inicio</S.MenuLink>
           <S.MenuLink to="/editais?pagina=1">Editais</S.MenuLink>
+          <S.MenuLink to="/propostas?pagina=1">Propostas</S.MenuLink>
           <S.MenuLink to="/fale-conosco">Fale Conosco</S.MenuLink>
         </S.MenuNav>
         <S.RegisterBox>

@@ -3,6 +3,7 @@ import React from 'react';
 import Home from 'pages/Home';
 import Editais from 'pages/Editais';
 import Edital from 'pages/Edital';
+import Propostas from 'pages/Propostas';
 import FaleConosco from 'pages/FaleConosco';
 import Login from 'pages/Login';
 import Dashboard from 'pages/Dashboard';
@@ -22,6 +23,7 @@ const Routes: React.FC = () => (
     <Route path="/" exact component={Home} />
     <Route path="/editais" exact component={Editais} />
     <Route path="/editais/:id" exact component={Edital} />
+    <Route path="/propostas" exact component={Propostas} />
     <Route path="/fale-conosco" exact component={FaleConosco} />
     <Route path="/login" exact component={Login} />
     <Route path="/dashboard" exact component={Dashboard} isPrivate />
