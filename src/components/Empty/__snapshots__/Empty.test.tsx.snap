@@ -53,6 +53,7 @@ exports[`<Empty /> should render/navigating correctly 1`] = `
 }
 
 .c0 img {
+  width: min(500px,100%);
   object-fit: cover;
 }
 

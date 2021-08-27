@@ -7,6 +7,7 @@ export const Container = styled.div`
   text-align: center;
 
   img {
+    width: min(500px, 100%);
     object-fit: cover;
   }
 `;
