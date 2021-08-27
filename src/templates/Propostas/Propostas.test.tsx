@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { renderWithTheme } from 'utils/tests/helpers';
 import { useState as useStateMock } from 'react';
 
@@ -102,5 +102,10 @@ describe('<PropostasTemplate />', () => {
       screen.getByText(/Não encontramos propostas para esses filtros/i),
     ).toBeInTheDocument();
   });
-  // TODO Testar se quando filtro é feito, a função push é executada levando os params
+
+  it('should push on filter submit', async () => {
+    renderWithTheme(<PropostasTemplate page={1} onPageChange={setState} />);
+    fireEvent.submit(screen.getByRole('button', { name: /filtrar/i }));
+    await waitFor(() => expect(mockHistoryPush).toBeCalled());
+  });
 });
