@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Heading from 'components/Heading';
 import { useAuth } from 'hooks/auth';
 import Button from 'components/Button';
 import SelectField from 'components/SelectField';
+import { BiErrorCircle as ErrorIcon } from 'react-icons/bi';
 import {
   cargaTrabalhoFields,
   categoriaFields,
@@ -11,16 +12,59 @@ import {
   instituicaoFields,
   titulacaoFields,
 } from 'utils/fields';
-import { Form } from '..';
+import { FieldErrors } from 'utils/validations';
+import { updateSchoolingValidate } from 'utils/validations/auth';
+import { Form, FormError, FormLoading } from '..';
 
 const MySchoolingForm: React.FC = () => {
+  const [values, setValues] = useState({
+    university: '',
+    center: '',
+    departament: '',
+    category: '',
+    work_regime: '',
+    school_degree: '',
+  });
+  const [fieldError, setFieldError] = useState<FieldErrors>({});
+  const [formError, setFormError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const { updateSchooling } = useAuth();
   const { user } = useAuth();
+  //
+  const handleInput = (field: string, value: string) => {
+    setValues(s => ({ ...s, [field]: value }));
+  };
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setLoading(true);
+    // TODO alterar para validar no onChange
+    const errors = updateSchoolingValidate(values);
+    if (Object.keys(errors).length) {
+      setFieldError(errors);
+      setLoading(false);
+      return;
+    }
+
+    setFieldError({});
+    try {
+      await updateSchooling({ ...values });
+    } catch (e) {
+      setFormError(e.message);
+    }
+    setLoading(false);
+  };
   return (
     <>
       <Heading lineBottom color="titleBlack" size="small">
         Minha escolaridade
       </Heading>
-      <Form>
+      {!!formError && (
+        <FormError>
+          <ErrorIcon />
+          {formError}
+        </FormError>
+      )}
+      <Form onSubmit={handleSubmit}>
         <SelectField
           label="Instituição"
           name="instituicao"
@@ -28,6 +72,8 @@ const MySchoolingForm: React.FC = () => {
           placeholder="Selecione a instituição"
           className="fullWidth"
           options={instituicaoFields}
+          error={fieldError.university}
+          onSelectChange={v => handleInput('university', v)}
         />
         <SelectField
           label="Centro"
@@ -35,6 +81,8 @@ const MySchoolingForm: React.FC = () => {
           initialValue={user?.centro}
           placeholder="Selecione o centro"
           options={centroFields}
+          error={fieldError.center}
+          onSelectChange={v => handleInput('center', v)}
         />
         <SelectField
           label="Departamento"
@@ -42,6 +90,8 @@ const MySchoolingForm: React.FC = () => {
           initialValue={user?.departamento}
           placeholder="Selecione o departamento"
           options={departamentoFields}
+          error={fieldError.departament}
+          onSelectChange={v => handleInput('departament', v)}
         />
         <SelectField
           label="Categoria"
@@ -49,6 +99,8 @@ const MySchoolingForm: React.FC = () => {
           initialValue={user?.categoria}
           placeholder="Selecione a categoria"
           options={categoriaFields}
+          error={fieldError.category}
+          onSelectChange={v => handleInput('category', v)}
         />
         <SelectField
           label="Regime de trabalho"
@@ -56,6 +108,8 @@ const MySchoolingForm: React.FC = () => {
           initialValue={user?.carga_trabalho}
           placeholder="Selecione a carga de trabalho"
           options={cargaTrabalhoFields}
+          error={fieldError.work_regime}
+          onSelectChange={v => handleInput('work_regime', v)}
         />
         <SelectField
           label="Titulação"
@@ -63,8 +117,12 @@ const MySchoolingForm: React.FC = () => {
           initialValue={user?.titulacao}
           placeholder="Selecione a titulação"
           options={titulacaoFields}
+          error={fieldError.school_degree}
+          onSelectChange={v => handleInput('school_degree', v)}
         />
-        <Button>Salvar</Button>
+        <Button type="submit" disabled={loading}>
+          {loading ? <FormLoading /> : <span>Salvar</span>}
+        </Button>
       </Form>
     </>
   );

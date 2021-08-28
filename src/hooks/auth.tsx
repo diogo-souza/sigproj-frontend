@@ -4,6 +4,7 @@ import {
   User,
   UsersPermissionsLoginInput,
   UsersUpdatePasswordInput,
+  UsersUpdateSchoolingInput,
 } from 'types/authTypes';
 
 import { formatUser } from 'utils/formatters';
@@ -19,6 +20,7 @@ type AuthContextData = {
   user: User;
   signIn(credential: UsersPermissionsLoginInput): Promise<void>;
   updatePassword(passwords: UsersUpdatePasswordInput): Promise<void>;
+  updateSchooling(degrees: UsersUpdateSchoolingInput): Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -90,8 +92,39 @@ const AuthProvider: React.FC = ({ children }) => {
     [getUser, updateUser],
   );
 
+  const updateSchooling = useCallback(
+    async ({
+      university,
+      center,
+      departament,
+      category,
+      work_regime,
+      school_degree,
+    }) => {
+      try {
+        await api.put('/usuarios/editar-perfil/', {
+          carga_trabalho: work_regime,
+          categoria: category,
+          centro: center,
+          departamento: departament,
+          universidade: university,
+          titulacao: school_degree,
+        });
+
+        const user = await getUser();
+
+        updateUser(user);
+      } catch (e) {
+        throw new Error(e.response.data.titulo);
+      }
+    },
+    [getUser, updateUser],
+  );
+
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn, updatePassword }}>
+    <AuthContext.Provider
+      value={{ user: data.user, signIn, updatePassword, updateSchooling }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -9,6 +9,15 @@ export type UsersUpdatePasswordInput = {
   confirm_new_password: string;
 };
 
+export type UsersUpdateSchoolingInput = {
+  university: string;
+  center: string;
+  departament: string;
+  category: string;
+  work_regime: string;
+  school_degree: string;
+};
+
 type RolesTypes =
   | 'ROLE_ROOT'
   | 'ROLE_ADMIN'

@@ -2,6 +2,7 @@ import Joi from 'joi';
 import {
   UsersPermissionsLoginInput,
   UsersUpdatePasswordInput,
+  UsersUpdateSchoolingInput,
 } from 'types/authTypes';
 import { fieldsValidations, getFieldErrors } from '..';
 
@@ -40,6 +41,32 @@ export function updatePasswordValidate(values: UsersUpdatePasswordInput) {
         'string.max': 'Máximo de 16 caracteres',
         'string.empty': 'Campo obrigatório',
       }),
+  });
+  return getFieldErrors(schema.validate(values, { abortEarly: false }));
+}
+
+// TODO validação não está deixando os campos opcionais, para validar
+// ele pede que necessariamente mova o Select do Schooling (Minha Escolaridade)
+export function updateSchoolingValidate(values: UsersUpdateSchoolingInput) {
+  const schema = Joi.object({
+    university: Joi.string().optional().messages({
+      'string.empty': 'Selecione uma instituição',
+    }),
+    center: Joi.string().optional().messages({
+      'string.empty': 'Selecione um centro',
+    }),
+    departament: Joi.string().optional().messages({
+      'string.empty': 'Selecione um departamento',
+    }),
+    category: Joi.string().optional().messages({
+      'string.empty': 'Selecione uma categoria',
+    }),
+    work_regime: Joi.string().optional().messages({
+      'string.empty': 'Selecione uma carga horária',
+    }),
+    school_degree: Joi.string().optional().messages({
+      'string.empty': 'Selecione uma titulação',
+    }),
   });
   return getFieldErrors(schema.validate(values, { abortEarly: false }));
 }
