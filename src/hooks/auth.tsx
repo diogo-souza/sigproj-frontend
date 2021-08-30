@@ -18,6 +18,7 @@ type AuthState = {
 type AuthContextData = {
   user: User;
   signIn(credential: UsersPermissionsLoginInput): Promise<void>;
+  signOut(): void;
   updatePassword(passwords: UsersUpdatePasswordInput): Promise<void>;
 };
 
@@ -71,6 +72,13 @@ const AuthProvider: React.FC = ({ children }) => {
     [getUser, updateUser],
   );
 
+  const signOut = useCallback(() => {
+    localStorage.removeItem(process.env.REACT_APP_TOKEN!);
+    localStorage.removeItem(process.env.REACT_APP_USER!);
+
+    setData({} as AuthState);
+  }, []);
+
   const updatePassword = useCallback(
     async ({ password, new_password, confirm_new_password }) => {
       try {
@@ -91,7 +99,9 @@ const AuthProvider: React.FC = ({ children }) => {
   );
 
   return (
-    <AuthContext.Provider value={{ user: data.user, signIn, updatePassword }}>
+    <AuthContext.Provider
+      value={{ user: data.user, signIn, signOut, updatePassword }}
+    >
       {children}
     </AuthContext.Provider>
   );
