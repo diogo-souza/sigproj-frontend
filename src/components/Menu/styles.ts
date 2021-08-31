@@ -34,7 +34,8 @@ export const MenuLink = styled(Link)`
     text-decoration: none;
     text-align: center;
 
-    &:hover {
+    &:hover,
+    &:focus {
       &::after {
         content: '';
         position: absolute;

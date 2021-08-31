@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { renderWithTheme } from 'utils/tests/helpers';
 
@@ -36,7 +36,7 @@ describe('<Empty />', () => {
 
     const button = screen.getByRole('button', { name: /ir para inicio/i });
     expect(button).toBeInTheDocument();
-    userEvent.click(button);
+    fireEvent.click(button);
     expect(mockHistoryPush).toHaveBeenCalledWith('/');
 
     expect(container.parentElement).toMatchSnapshot();
@@ -46,7 +46,7 @@ describe('<Empty />', () => {
     renderWithTheme(<Empty {...props} />);
 
     expect(
-      screen.queryByRole('buttonn', { name: /ir para inicio/i }),
+      screen.queryByRole('button', { name: /ir para inicio/i }),
     ).not.toBeInTheDocument();
   });
 });
