@@ -1,14 +1,18 @@
-import { useAuth } from 'hooks/auth';
 import React from 'react';
-import * as S from './styles';
+
+import Base from 'templates/Base';
+
+import { Container } from 'components/Container';
+
+import Heading from 'components/Heading';
 
 const Dashboard: React.FC = () => {
-  const { user } = useAuth();
-
   return (
-    <S.Container>
-      <h1>Bem vindo de volta{!!user && ` ${user.nome}`}!</h1>
-    </S.Container>
+    <Base>
+      <Container>
+        <Heading color="titleBlack">Dashboard</Heading>
+      </Container>
+    </Base>
   );
 };
 

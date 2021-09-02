@@ -68,7 +68,8 @@
       "!src/*.ts(x)?",
       "!src/pages/**/*.tsx",
       "!src/styles/**/*.ts",
-      "!src/types/**/*.d.ts",
+      "!src/types/**",
+      "!src/utils/*.ts",
       "!src/services/api.ts",
       "!src/routes/**"
     ]

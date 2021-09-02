@@ -13,6 +13,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Validar se vale a pena isso
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
 
