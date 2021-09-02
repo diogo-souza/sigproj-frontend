@@ -3,6 +3,8 @@ import {
   UsersPermissionsLoginInput,
   UsersUpdatePasswordInput,
   UsersUpdateSchoolingInput,
+  UsersUpdateAddresInput,
+  UsersUpdateProfileInput,
 } from 'types/authTypes';
 import { fieldsValidations, getFieldErrors } from '..';
 
@@ -45,8 +47,6 @@ export function updatePasswordValidate(values: UsersUpdatePasswordInput) {
   return getFieldErrors(schema.validate(values, { abortEarly: false }));
 }
 
-// TODO validação não está deixando os campos opcionais, para validar
-// ele pede que necessariamente mova o Select do Schooling (Minha Escolaridade)
 export function updateSchoolingValidate(values: UsersUpdateSchoolingInput) {
   const schema = Joi.object({
     university: Joi.string().optional().messages({
@@ -66,6 +66,57 @@ export function updateSchoolingValidate(values: UsersUpdateSchoolingInput) {
     }),
     school_degree: Joi.string().optional().messages({
       'string.empty': 'Selecione uma titulação',
+    }),
+  });
+  return getFieldErrors(schema.validate(values, { abortEarly: false }));
+}
+
+export function updateAddresValidate(values: UsersUpdateAddresInput) {
+  const schema = Joi.object({
+    street: Joi.string().max(30).required().messages({
+      'string.max': 'Máximo de 30 caracteres',
+      'string.empty': 'Campo obrigatório',
+    }),
+    residencial_number: Joi.required().messages({
+      'string.empty': 'Campo obrigatório',
+    }),
+    district: Joi.string().required().messages({
+      'string.empty': 'Campo obrigatório',
+    }),
+    state: Joi.string().required().messages({
+      'string.empty': 'Campo obrigatório',
+    }),
+    city: Joi.string().allow(null).required().messages({
+      'string.empty': 'Campo obrigatório',
+    }),
+    postal_code: Joi.string().max(9).required().messages({
+      'string.max': 'Máximo de 9 caracteres',
+      'string.empty': 'Campo obrigatório',
+    }),
+    complement: Joi.string().allow(''),
+  });
+  return getFieldErrors(schema.validate(values, { abortEarly: false }));
+}
+
+export function updateProfileValidate(values: UsersUpdateProfileInput) {
+  const schema = Joi.object({
+    nome: Joi.string().max(30).required().messages({
+      'string.max': 'Máximo de 30 caracteres',
+      'string.empty': 'Campo obrigatório',
+    }),
+    gender: Joi.string().required().messages({
+      'string.empty': 'Campo obrigatório',
+    }),
+    birth_date: Joi.string().messages({
+      'string.empty': 'Campo obrigatório',
+    }),
+    phone: Joi.string().max(16).required().messages({
+      'string.max': 'Máximo de 12 caracteres',
+      'string.empty': 'Campo obrigatório',
+    }),
+    cellphone: Joi.string().max(16).required().messages({
+      'string.max': 'Máximo de 12 caracteres',
+      'string.empty': 'Campo obrigatório',
     }),
   });
   return getFieldErrors(schema.validate(values, { abortEarly: false }));

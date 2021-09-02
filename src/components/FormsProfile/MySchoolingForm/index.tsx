@@ -17,20 +17,19 @@ import { updateSchoolingValidate } from 'utils/validations/auth';
 import { Form, FormError, FormLoading } from '..';
 
 const MySchoolingForm: React.FC = () => {
-  const [values, setValues] = useState({
-    university: '',
-    center: '',
-    departament: '',
-    category: '',
-    work_regime: '',
-    school_degree: '',
-  });
   const [fieldError, setFieldError] = useState<FieldErrors>({});
   const [formError, setFormError] = useState('');
   const [loading, setLoading] = useState(false);
   const { updateSchooling } = useAuth();
   const { user } = useAuth();
-  //
+  const [values, setValues] = useState({
+    university: user.universidade,
+    center: user.centro,
+    departament: user.departamento,
+    category: user.categoria,
+    work_regime: user.carga_trabalho,
+    school_degree: user.titulacao,
+  });
   const handleInput = (field: string, value: string) => {
     setValues(s => ({ ...s, [field]: value }));
   };
@@ -49,7 +48,7 @@ const MySchoolingForm: React.FC = () => {
     try {
       await updateSchooling({ ...values });
     } catch (e) {
-      setFormError(e.message);
+      setFormError('Nada foi modificado');
     }
     setLoading(false);
   };
@@ -68,7 +67,7 @@ const MySchoolingForm: React.FC = () => {
         <SelectField
           label="Instituição"
           name="instituicao"
-          initialValue={user?.universidade}
+          initialValue={values.university}
           placeholder="Selecione a instituição"
           className="fullWidth"
           options={instituicaoFields}
@@ -78,7 +77,7 @@ const MySchoolingForm: React.FC = () => {
         <SelectField
           label="Centro"
           name="centro"
-          initialValue={user?.centro}
+          initialValue={values.center}
           placeholder="Selecione o centro"
           options={centroFields}
           error={fieldError.center}
@@ -87,7 +86,7 @@ const MySchoolingForm: React.FC = () => {
         <SelectField
           label="Departamento"
           name="departamento"
-          initialValue={user?.departamento}
+          initialValue={values.departament}
           placeholder="Selecione o departamento"
           options={departamentoFields}
           error={fieldError.departament}
@@ -96,7 +95,7 @@ const MySchoolingForm: React.FC = () => {
         <SelectField
           label="Categoria"
           name="categoria"
-          initialValue={user?.categoria}
+          initialValue={values.category}
           placeholder="Selecione a categoria"
           options={categoriaFields}
           error={fieldError.category}
@@ -105,7 +104,7 @@ const MySchoolingForm: React.FC = () => {
         <SelectField
           label="Regime de trabalho"
           name="regime_de_trabalho"
-          initialValue={user?.carga_trabalho}
+          initialValue={values.work_regime}
           placeholder="Selecione a carga de trabalho"
           options={cargaTrabalhoFields}
           error={fieldError.work_regime}
@@ -114,7 +113,7 @@ const MySchoolingForm: React.FC = () => {
         <SelectField
           label="Titulação"
           name="titulacao"
-          initialValue={user?.titulacao}
+          initialValue={values.school_degree}
           placeholder="Selecione a titulação"
           options={titulacaoFields}
           error={fieldError.school_degree}

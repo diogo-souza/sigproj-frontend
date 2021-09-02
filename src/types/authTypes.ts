@@ -18,6 +18,24 @@ export type UsersUpdateSchoolingInput = {
   school_degree: string;
 };
 
+export type UsersUpdateAddresInput = {
+  street: string;
+  residencial_number: string;
+  complement: string;
+  district: string;
+  state: string;
+  city: string;
+  postal_code: string;
+};
+
+export type UsersUpdateProfileInput = {
+  nome: string;
+  gender: string;
+  birth_date: string;
+  phone: string;
+  cellphone: string;
+};
+
 type RolesTypes =
   | 'ROLE_ROOT'
   | 'ROLE_ADMIN'

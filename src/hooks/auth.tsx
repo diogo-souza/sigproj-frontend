@@ -5,6 +5,8 @@ import {
   UsersPermissionsLoginInput,
   UsersUpdatePasswordInput,
   UsersUpdateSchoolingInput,
+  UsersUpdateAddresInput,
+  UsersUpdateProfileInput,
 } from 'types/authTypes';
 
 import { formatUser } from 'utils/formatters';
@@ -21,6 +23,8 @@ type AuthContextData = {
   signIn(credential: UsersPermissionsLoginInput): Promise<void>;
   updatePassword(passwords: UsersUpdatePasswordInput): Promise<void>;
   updateSchooling(degrees: UsersUpdateSchoolingInput): Promise<void>;
+  updateAddres(addres: UsersUpdateAddresInput): Promise<void>;
+  updateProfile(profile: UsersUpdateProfileInput): Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -121,9 +125,67 @@ const AuthProvider: React.FC = ({ children }) => {
     [getUser, updateUser],
   );
 
+  const updateAddres = useCallback(
+    async ({
+      street,
+      residencial_number,
+      complement,
+      district,
+      state,
+      city,
+      postal_code,
+    }) => {
+      try {
+        await api.put('/usuarios/editar-perfil/', {
+          endereco: {
+            logradouro: street,
+            numero_residencial: residencial_number,
+            complemento: complement,
+            bairro: district,
+            estado: state,
+            cidade: city,
+            cep: postal_code,
+          },
+        });
+
+        const user = await getUser();
+        updateUser(user);
+      } catch (e) {
+        throw new Error(e.response.data.titulo);
+      }
+    },
+    [getUser, updateUser],
+  );
+
+  const updateProfile = useCallback(
+    async ({ nome, gender, birth_date, phone, cellphone }) => {
+      try {
+        await api.put('/usuarios/editar-perfil/', {
+          nome,
+          sexo: gender,
+          data_nascimento: birth_date,
+          telefone: phone,
+          celular: cellphone,
+        });
+        const user = await getUser();
+        updateUser(user);
+      } catch (e) {
+        throw new Error(e.response.data.titulo);
+      }
+    },
+    [getUser, updateUser],
+  );
+
   return (
     <AuthContext.Provider
-      value={{ user: data.user, signIn, updatePassword, updateSchooling }}
+      value={{
+        user: data.user,
+        signIn,
+        updatePassword,
+        updateSchooling,
+        updateAddres,
+        updateProfile,
+      }}
     >
       {children}
     </AuthContext.Provider>
